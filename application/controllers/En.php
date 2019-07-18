@@ -4,10 +4,14 @@ class En extends CI_Controller {
 
     function __construct(){
         parent::__construct();
+        $this->load->model('kategorimaintenancesmodel');
     }
 
     public function home(){
-        $this->load->view('en/home');
+         $data = array(
+            'kategorimaintenances' => $this->kategorimaintenancesmodel->getAll(), 
+        );
+        $this->load->view('en/home',$data);
     }
 
     public function who_we_are(){

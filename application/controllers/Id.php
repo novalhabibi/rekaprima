@@ -4,10 +4,14 @@ class Id extends CI_Controller {
 
     function __construct(){
         parent::__construct();
+        $this->load->model('kategorimaintenancesmodel');
     }
 
     public function beranda() {
-        $this->load->view('id/beranda');
+        $data = array(
+            'kategorimaintenances' => $this->kategorimaintenancesmodel->getAll(), 
+        );
+        $this->load->view('id/beranda',$data);
     }
 
     public function siapa_kami() {
