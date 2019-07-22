@@ -5,6 +5,7 @@ class En extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('kategorimaintenancesmodel');
+         $this->load->model('maintenancesmodel');
     }
 
     public function home(){
@@ -38,7 +39,21 @@ class En extends CI_Controller {
         $this->load->view('en/commissioners');
     }
 
-    public function signalling_systems() {
+    public function categorymaintenance() {
+        $this->load->view('en/ourbusiness/category_maintenance');
+    }
+
+    public function detail_maintenance() {
+        $link = $this->uri->segment(3);
+        $data['datadetailmaintenances'] = $this->maintenancesmodel->getByLink($link);
+        // print_r($datadetailmaintenances);
+        // die();
+        $this->load->view('en/ourbusiness/detailmaintenance',$data);
+    }
+
+
+
+    public function signalling_systems_en() {
         $this->load->view('en/ourbusiness/signaling');
     }
 
@@ -66,7 +81,7 @@ class En extends CI_Controller {
         $this->load->view('en/ourbusiness/detailsignaling5');
     }
 
-    public function substations_systems() {
+    public function substations_systems_en() {
         $this->load->view('en/ourbusiness/substation');
     }
 
@@ -82,7 +97,7 @@ class En extends CI_Controller {
         $this->load->view('en/ourbusiness/detailsubstation2');
     }
 
-    public function telecommunication_systems() {
+    public function telecommunication_systems_en() {
         $this->load->view('en/ourbusiness/telecommunication');
     }
 

@@ -96,39 +96,39 @@
             <ul class="nav nav-pills container" id="mainNav">
               <li style="float: left">
               <div class="logo col-md-3 logo-collapse-nav">
-              <a href="<?php echo base_url('id/beranda') ?>">
+              <a href="<?php echo base_url('overview') ?>">
                   <img alt="Len Rekaprima Semesta" width="110" height="50" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="<?php echo base_url('assets/img/lrs-logo2.png') ?>">
                 </a>
             </div>
               </li>
               <li class="">
-                <a href="<?php echo base_url('id/beranda') ?>">
+                <a href="<?php echo base_url('overview') ?>">
                   <i class="fa fa-home" style="font-size:25px;"></i>
                 </a>
               </li>
               <li class="dropdown dropdown-mega">
-              	<a href="#" class="dropdown-toggle">Profil</a>
+              	<a href="#" class="dropdown-toggle">Profile</a>
                 <ul class="dropdown-menu">
                   <li>
                     <div class="dropdown-mega-content container">
                       <div class="row">
                         <div class="col-md-3">
-                          <h3><b>Profil</b></h3>
+                          <h3><b>Profile</b></h3>
                         </div>
                           <div class="col-md-3">
                             <span class="dropdown-mega-sub-title"><h4>Profil Perusahaan</h4></span>
                               <ul class="dropdown-mega-sub-nav">
-                                <li><a href="<?php echo base_url('id/siapa_kami') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Siapa Kami</a></li>
-                                <li><a href="<?php echo base_url('id/sejarah') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Sejarah Len Rekaprima Semesta</a></li>
-                                <li><a href="<?php echo base_url('id/visi_misi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Visi &amp; Misi</a></li>
-                                <li><a href="<?php echo base_url('id/struktur_organisasi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
+                                <li><a href="<?php echo base_url('overview/aboutus') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Siapa Kami</a></li>
+                                <li><a href="<?php echo base_url('overview/sejarah') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Sejarah Len Rekaprima Semesta</a></li>
+                                <li><a href="<?php echo base_url('overview/visimisi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Visi &amp; Misi</a></li>
+                                <li><a href="<?php echo base_url('overview/strukturorganisasi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Struktur Organisasi</a></li>
                               </ul>
                           </div>
                           <div class="col-md-3">
                             <span class="dropdown-mega-sub-title"><h4>Pemimpin Kami</h4></span>
                               <ul class="dropdown-mega-sub-nav">
-                                <li><a href="<?php echo base_url('id/management') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Management</a></li>
-                                <li><a href="<?php echo base_url('id/komisaris') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Komisaris</a></li>
+                                <li><a href="<?php echo base_url('overview/management') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Management</a></li>
+                                <li><a href="<?php echo base_url('overview/komisaris') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Dewan Komisaris</a></li>
                               </ul>
                           </div>
                       </div>
@@ -148,9 +148,9 @@
                         <div class="col-md-3">
                           <span class="dropdown-mega-sub-title"><h4>Maintenance</h4></span>
                             <ul class="dropdown-mega-sub-nav">
-                              <li><a href="<?php echo base_url('id/signalling_systems') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Signalling Systems</a></li>
-                              <li><a href="<?php echo base_url('id/substations_systems') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Substations Systems</a></li>
-                              <li><a href="<?php echo base_url('id/telecommunication_systems') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Telecommunication Systems</a></li>
+                              <li><a href="<?php echo base_url('overview/signaling') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Signalling Systems</a></li>
+                              <li><a href="<?php echo base_url('overview/substation') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Substations Systems</a></li>
+                              <li><a href="<?php echo base_url('overview/telecommunication') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Telecommunication Systems</a></li>
                             </ul>
                         </div>
                       </div>
@@ -159,43 +159,43 @@
                 </ul>
               </li>
               <li class="dropdown dropdown-mega">
-                <a href="#" class="dropdown-toggle">Proyek</a>
+                <a href="#" class="dropdown-toggle">Project</a>
                 <ul class="dropdown-menu">
                   <li>
                     <div class="dropdown-mega-content container">
                       <div class="row">
                         <div class="col-md-3">
-                          <h3><b>Proyek</b></h3>
+                          <h3><b>Project</b></h3>
                         </div>
                         <div class="col-md-3">
                           <span class="dropdown-mega-sub-title"><h4>Mainline</h4></span>
                           <ul class="dropdown-mega-sub-nav">
-                            <li><a href="<?php echo base_url('id/proyek_baturaja_martapura') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Baturaja - Martapura</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_cirebon_surabaya') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Cirebon - Surabaya</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_kedungbanteng_madiun') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kedung Banteng - Madiun</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_kertapati_prabumulih') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kertapati - Prabumulih</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_kroya_kutoarjo') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kroya - Kutoarjo</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_madiun_jombang') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Madiun - Jombang</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_purwokerto_kroya') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Purwokerto - Kroya</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_solo_kedungbanteng') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Solo - Kedung Banteng</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtbaturaja') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Baturaja - Martapura</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtcirebon') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Cirebon - Surabaya</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtkedungbanteng') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kedung Banteng - Madiun</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtkertapati') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kertapati - Prabumulih</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtkroya') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Kroya - Kutoarjo</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtmadiun') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Madiun - Jombang</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtpurwokerto') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Purwokerto - Kroya</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinedtsolo') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Solo - Kedung Banteng</a></li>
                           </ul>
                         </div>
                         <div class="col-md-3">
                         <span class="dropdown-mega-sub-title"><h4>Mainline</h4></span>
-                        <ul class="dropdown-mega-sub-nav">
-                            <li><a href="<?php echo base_url('id/proyek_solo_jogja') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Solo - Jogja</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_manggarai_cikarang') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Double Track Manggarai - Cikarang</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_bandartinggi_kualatanjung') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Bandar Tinggi - Kuala Tanjung</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_binjai_besitang') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Binjai - Besitang</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_medan_kualanamu') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Medan - Kualanamu</a></li>
+                          <ul class="dropdown-mega-sub-nav">
+                            <li><a href="<?php echo base_url('project/mainlinedtsolojogja') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Track Solo - Jogja</a></li>
+                            <li><a href="<?php echo base_url('project/mainlineddtmanggarai') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Double Double Track Manggarai - Cikarang</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinepsbandartinggi') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Bandar Tinggi - Kuala Tanjung</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinepsbinjai') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Binjai - Besitang</a></li>
+                            <li><a href="<?php echo base_url('project/mainlinepsmedan') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Persinyalan Elektrik Medan - Kualanamu</a></li>
                           </ul>
                         </div>
                         <div class="col-md-3">
                           <span class="dropdown-mega-sub-title"><h4>Urban</h4></span>
                           <ul class="dropdown-mega-sub-nav">
-                            <li><a href="<?php echo base_url('id/proyek_apms') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> APMS Skytrain</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_lrt') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> LRT Sumatera Selatan</a></li>
-                            <li><a href="<?php echo base_url('id/proyek_mrt') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> MRT Jakarta</a></li>
+                            <li><a href="<?php echo base_url('project/urbanapms') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> APMS Skytrain</a></li>
+                            <li><a href="<?php echo base_url('project/urbanlrt') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> LRT Sematera Selatan</a></li>
+                            <li><a href="<?php echo base_url('project/urbanmrt') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> MRT Jakarta</a></li>
                           </ul>
                         </div>  
                       </div>
@@ -217,7 +217,7 @@
                             <ul class="dropdown-mega-sub-nav">
                               <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Magang</a></li>
                               <li><a href="#" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Lulusan Baru</a></li>
-                              <li><a href="<?php echo base_url('id/rekrutmen') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Tenaga Berpengalaman</a></li>
+                              <li><a href="<?php echo base_url('jobs/rekrutmen') ?>"><i class="fa fa-chevron-right" aria-hidden="true"></i> Tenaga Berpengalaman</a></li>
                             </ul>
                         </div>
                       </div>
@@ -243,7 +243,7 @@
                         <div class="col-md-3">
                           <span class="dropdown-mega-sub-title"><h4>Berita Terbaru</h4></span>
                           <ul class="dropdown-mega-sub-nav">
-                            <li><a href="<?php echo base_url('id/news') ?>" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Berita</a></li>
+                            <li><a href="<?php echo base_url('news/news') ?>" target="_self"><i class="fa fa-chevron-right" aria-hidden="true"></i> Berita</a></li>
                           </ul>  
                         </div>
                       </div>
@@ -252,28 +252,7 @@
                 </ul>
               </li>
               <li class="">
-                <a href="<?php echo base_url('id/contact') ?>">Contact</a>
-              </li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li>
-                <a href="#" class="dropdown-menu-toggle" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <img src="<?php echo base_Url('assets/img/blank.gif') ?>" class="flag flag-id" alt="Indonesia" /><span> Indonesia</span>
-                  <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
-                  <li>
-                    <a href="<?php echo base_url('en/len_mdp') ?>"><img src="<?php echo base_Url('assets/img/blank.gif') ?>" class="flag flag-gb" alt="English" /> English</a>
-                  </li>
-                </ul>
+                <a href="<?php echo base_url('contact') ?>">Contact</a>
               </li>
             </ul>
           </nav>
@@ -296,11 +275,11 @@
                                     <h3 class="mb-none">Len Signalling Systems</h3>
                                     <div class="divider divider-primary divider-small mb-xl"><hr></div>
                                         <ul class="nav nav-list mb-xl show-bg-active">
-                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('id/len_signalling_systems') ?>">Len Signalling Systems</a></li>
-                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('id/len_ctc') ?>">Len CTC</a></li>
-                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('id/len_local_interface') ?>">Len Local Interface</a></li>
-                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('id/len_axle_counter') ?>">Axle Counter Len - Altpro</a></li>
-                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('id/len_led_signal') ?>">Len LED Signal</a></li>
+                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('overview/detailsignaling') ?>">Len Signalling Systems</a></li>
+                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('overview/detailsignaling1') ?>">Len CTC</a></li>
+                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('overview/detailsignaling2') ?>">Len Local Interface</a></li>
+                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('overview/detailsignaling3') ?>">Axle Counter Len - Altpro</a></li>
+                                            <li><a data-hash="" data-hash-offset="110" href="<?php echo base_url('overview/detailsignaling4') ?>">Len LED Signal</a></li>
                                             <li><a data-hash="" data-hash-offset="110" href="#">Len MDP</a></li>
                                         </ul>
                                 </div>

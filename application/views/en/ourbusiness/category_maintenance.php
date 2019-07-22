@@ -1,3 +1,15 @@
+<?php
+$link = $this->uri->segment(3);
+
+
+$CI = & get_instance();
+$CI->load->model('kategorimaintenancesmodel');
+$CI->load->model('maintenancesmodel');
+$result = $CI->kategorimaintenancesmodel->getByLink($link);
+$maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_kategori_maintenance);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +68,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 
-    <title>Double Track Baturaja - Martapura | PT Len Rekaprima Semesta</title>
+    <title>Category <?= $result->name_kategori_maintenance_en ?> | PT Len Rekaprima Semesta</title>
 
     <!-- Head Libs -->
     <script src="<?php echo base_url('assets/vendor/modernizr/modernizr.min.js') ?>"></script>
@@ -80,86 +92,104 @@
 
 <body>
     <div class="body sticky-header-active">
-        <?php $this->load->view('id/_includes/header.php') ?>
+        <?php $this->load->view('en/_includes/header.php') ?>
         <div class="main" role="main">
             <section class="page-header page-header-custom-background"
-                style="background-image:url(<?php echo base_url('assets/media/image/dtbaturaja.jpg') ?>);height:250px;">
+                style="background-image:url(<?php echo base_url('assets/media/image/signalling2.jpg') ?>);height:250px;">
             </section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
                         <aside class="siderbar">
                             <div class="pin-wrapper">
-                                <h3 class="mb-none">Proyek <strong>Mainline</strong></h3>
+                                <h3 class="mb-none"><?= $result->name_kategori_maintenance_en ?></h3>
                                 <div class="divider divider-primary divider-small mb-xl">
                                     <hr>
                                 </div>
                                 <ul class="nav nav-list mb-xl show-bg-active">
-                                    <li><a data-hash="" data-hash-offset="110" href="#">Double Track Baturaja -
-                                            Martapura</a></li>
+                                    <?php
+                                    foreach ($maintenancewherecategory as $maintenancekategori) {
+                                      
+                                    
+                                    ?>
                                     <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_cirebon_surabaya') ?>">Double Track
-                                            Cirebon - Surabaya</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_kedungbanteng_madiun') ?>">Double Track
-                                            Kedung Banteng - Madiun</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_kertapati_prabumulih') ?>">Double Track
-                                            Kertapati - Prabumulih</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_kroya_kutoarjo') ?>">Double Track Kroya
-                                            - Kutoarjo</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_madiun_jombang') ?>">Double Track
-                                            Madiun - Jombang</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_purwokerto_kroya') ?>">Double Track
-                                            Purwokerto - Kroya</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_solo_kedungbanteng') ?>">Double Track
-                                            Solo - Kedung Banteng</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_solo_jogja') ?>">Double Track Solo -
-                                            Jogja</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_manggarai_cikarang') ?>">Double Double
-                                            Track Manggarai - Cikarang</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_bandartinggi_kualatanjung') ?>">Persinyalan
-                                            Elektrik Bandar Tinggi - Kuala Tanjung</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_binjai_besitang') ?>">Persinyalan
-                                            Elektrik Binjai - Besitang</a></li>
-                                    <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('id/proyek_medan_kualanamu') ?>">Persinyalan
-                                            Elektrik Medan - Kualanamu</a></li>
+                                            href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?> "><?= $maintenancekategori->name_maintenance_en ?></a>
+                                    </li>
+                                    <?php
+                                      # code...
+                                    }
+                                    
+                                    ?>
                                 </ul>
                             </div>
                         </aside>
                     </div>
                     <div class="col-md-9">
-                        <h3><strong>DOUBLE TRACK BATURAJA - MARTAPURA</strong></h3>
-                        <p style="text-align: justify;">Pekerjaan perawatan fasilitas operasi di Double Track Baturaja –
-                            Martapura mulai per Mei 2018 setelah serah terima pekerjaan proyek instalasi selesai dan
-                            saat ini masih dilakukannya pekerjaan perawatan hingga tahun 2020. Stasiun-stasiun yang
-                            dilakukan pekerjaan perawatan fasilitas operasi diantaranya adalah :</P>
-                        <ol style="list-style-type: lower-number;">
-                            <li style="text-align: justify;">Stasiun Baturaja</li>
-                            <li style="text-align: justify;">Stasiun Gilas</li>
-                            <li style="text-align: justify;">Stasiun Sungai Tuha</li>
-                            <li style="text-align: justify;">Stasiun Air Tuba</li>
-                            <li style="text-align: justify;">Stasiun Sepancar</li>
-                            <li style="text-align: justify;">Stasiun Kemelak</li>
-                            <li style="text-align: justify;">Stasiun Martapura</li>
-                        </ol>
-                        <p></p>
-                        <div class="post-image">
-                            <div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
-                                <div>
-                                    <div class="img-thumbnail">
-                                        <img class="img-responsive"
-                                            src="<?php echo base_url('assets/media/image/maps/baturaja-martapura.jpg') ?>"
-                                            alt="">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12" style="height: 200px;">
+                                <h3><?= $result->name_kategori_maintenance_en ?></h3>
+                                <p style="text-align: justify;"><?= $result->description_kategori_maintenance_en ?></p>
+                                <a href="<?php echo base_url('en/len_signalling_systems') ?>"
+                                    class="btn btn-primary btn-block"
+                                    style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4" style="height: 500px;">
+                                        <div class="thumb-info custom-thumb-info-4"><img
+                                                src="<?php echo base_url('assets/media/image/len_ctc.jpg') ?>"
+                                                class="img-responsive" caption="false" width="369" height="184"></div>
+                                        <h3>LEN CTC</h3>
+                                        <p style="text-align: justify;">Len Centralized Traffic Control (CTC) is an
+                                            integrated system for controlling and supervising signaling systems and or
+                                            types of equipment at stations from the central station.</p>
+                                        <a href="<?php echo base_url('en/len_ctc') ?>" class="btn btn-primary btn-block"
+                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                                    </div>
+                                    <div class="col-md-4" style="height: 500px;">
+                                        <div class="thumb-info custom-thumb-info-4"><img
+                                                src="<?php echo base_url('assets/media/image/len_local_interface.jpg') ?>"
+                                                class="img-responsive" caption="false" width="369" height="184"></div>
+                                        <h3>LEN LOCAL INTERFACE</h3>
+                                        <p style="text-align: justify;">Len Local Interface is an operator interface
+                                            that can connect to various interlocking systems.</p>
+                                        <a href="<?php echo base_url('en/len_local_interface') ?>"
+                                            class="btn btn-primary btn-block"
+                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                                    </div>
+                                    <div class="col-md-4" style="height: 500px;">
+                                        <div class="thumb-info custom-thumb-info-4"><img
+                                                src="<?php echo base_url('assets/media/image/len_axle_counter.jpg') ?>"
+                                                class="img-responsive" caption="false" width="369" height="184"></div>
+                                        <h3>Axle Counter Len - Altpro</h3>
+                                        <p style="text-align: justify;">Axle Counter is a device on a train that detects
+                                            trains passing instead of track circuits. Counting heads (or 'detection
+                                            points') are installed at each end of the section.</p>
+                                        <a href="<?php echo base_url('en/len_axle_counter') ?>"
+                                            class="btn btn-primary btn-block"
+                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                                    </div>
+                                    <div class="col-md-4" style="height: 500px;">
+                                        <div class="thumb-info custom-thumb-info-4"><img
+                                                src="<?php echo base_url('assets/media/image/len_led_signal.jpg') ?>"
+                                                class="img-responsive" caption="false" width="369" height="184"></div>
+                                        <h3>LEN LED SIGNAL</h3>
+                                        <p style="text-align: justify;">Signal LEDs are signaling systems that give
+                                            commands to machinists based on the color of the active light at a time.</p>
+                                        <a href="<?php echo base_url('en/len_led_signal') ?>"
+                                            class="btn btn-primary btn-block"
+                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                                    </div>
+                                    <div class="col-md-4" style="height: 500px;">
+                                        <div class="thumb-info custom-thumb-info-4"><img
+                                                src="<?php echo base_url('assets/media/image/len_mdp.jpg') ?>"
+                                                class="img-responsive" caption="false" width="369" height="184"></div>
+                                        <h3>LEN MDP</h3>
+                                        <p style="text-align: justify;">Signaling systems need to be supported by an
+                                            optimal power supply, one of which is the distribution panel signaling, or
+                                            Main Distribution Panel (MDP).</p>
+                                        <a href="<?php echo base_url('en/len_mdp') ?>" class="btn btn-primary btn-block"
+                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
                                     </div>
                                 </div>
                             </div>

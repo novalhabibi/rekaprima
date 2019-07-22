@@ -1,8 +1,8 @@
 <?php
 
-class kategorimaintenancesmodel extends CI_Model {
+class kategoriprojectsmodel extends CI_Model {
 
-    public $_table = "kategori_maintenances";
+    public $_table = "kategori_projects";
 
 
 
@@ -18,7 +18,7 @@ class kategorimaintenancesmodel extends CI_Model {
 
     public function getByLink($link)
     {
-        $where = "link_kategori_maintenance='$link' OR link_kategori_maintenance_en='$link'";
+        $where = "link_kategori_project='$link' OR link_kategori_project_en='$link'";
         $this->db->where($where);
         return $this->db->get($this->_table)->row();
     }

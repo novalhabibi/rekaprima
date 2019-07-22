@@ -5,13 +5,15 @@ class Id extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('kategorimaintenancesmodel');
+        $this->load->model('maintenancesmodel');
     }
 
     public function beranda() {
-        $data = array(
-            'kategorimaintenances' => $this->kategorimaintenancesmodel->getAll(), 
-        );
-        $this->load->view('id/beranda',$data);
+        // $data = array(
+        //     'kategorimaintenances' => $this->kategorimaintenancesmodel->getAll(), 
+        // );
+        // $this->load->view('id/beranda',$data);
+        $this->load->view('id/beranda');
     }
 
     public function siapa_kami() {
@@ -30,13 +32,36 @@ class Id extends CI_Controller {
         $this->load->view('id/strukturorganisasi');
     }
 
-    public function management() {
+    public function menejemen() {
         $this->load->view('id/management');
     }
 
     public function komisaris() {
         $this->load->view('id/komisaris');
     }
+
+    public function kategorimaintenance() {
+
+        $link = $this->uri->segment(3);
+        $datakategorimaintenances = $this->kategorimaintenancesmodel->getByLink($link);
+
+        $this->load->view('id/bisniskami/kategori_maintenances');
+    }
+
+    public function detail_maintenance() {
+        $link = $this->uri->segment(3);
+        $data['datadetailmaintenances'] = $this->maintenancesmodel->getByLink($link);
+        // print_r($datadetailmaintenances);
+        // die();
+        $this->load->view('id/bisniskami/detailmaintenance',$data);
+    }
+
+
+
+    public function project() {
+        $this->load->view('id/project/mainlinedtbaturaja');
+    }
+
 
     public function signalling_systems() {
         $this->load->view('id/bisniskami/signaling');
@@ -45,6 +70,7 @@ class Id extends CI_Controller {
     public function len_signalling_systems() {
         $this->load->view('id/bisniskami/detailsignaling');
     }
+    
 
     public function len_ctc() {
         $this->load->view('id/bisniskami/detailsignaling1');
