@@ -1,3 +1,13 @@
+<?php
+
+$CI = & get_instance();
+$CI->load->model('projectsmodel');
+$kategoriproject = $CI->projectsmodel->getByIdKategori($datadetailprojeks->id_kategori_kategori_project);
+// $maintenancewherecategory = $CI->kategoriproject->getByIdKategori($datadetailmaintenances->id_kategori_kategori_maintenance);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +66,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 
-    <title>Contact | PT Len Rekaprima Semesta</title>
+    <title><?= $datadetailprojeks->nama_project ?> | PT Len Rekaprima Semesta</title>
 
     <!-- Head Libs -->
     <script src="<?php echo base_url('assets/vendor/modernizr/modernizr.min.js') ?>"></script>
@@ -80,87 +90,56 @@
 
 <body>
     <div class="body sticky-header-active">
-        <?php $this->load->view('en/_includes/header.php') ?>
+        <?php $this->load->view('id/_includes/header.php') ?>
 
 
         <div class="main" role="main">
             <section class="page-header page-header-custom-background"
-                style="background-image:url(<?php echo base_url('assets/media/image/contactus6.jpg') ?>);height:250px;">
+                style="background-image:url(<?php echo base_url('assets/media/image/ddtmanggarai.jpg') ?>);height:250px;">
             </section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="validation-summary-valid" data-valmsg-summary="true">
-                            <ul></ul>
-                        </div>
-                        <h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>
-                        <form id="contactForm" action="<?php echo base_url('contact/saveData') ?>" method="POST">
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                        <label>Your name *</label>
-                                        <input type="text" value="" data-msg-required="Please enter your name."
-                                            maxlength="100" class="form-control" name="customerName" id="name" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>Your email address *</label>
-                                        <input type="email" value=""
-                                            data-msg-required="Please enter your email address."
-                                            data-msg-email="Please enter a valid email address." maxlength="100"
-                                            class="form-control" name="customerEmail" id="email" required>
-                                    </div>
+                    <div class="col-md-3">
+                        <aside class="siderbar">
+                            <div class="pin-wrapper">
+                                <h3 class="mb-none">Proyek <strong><?= $datadetailprojeks->nama_kategori_project ?></strong></h3>
+                                <div class="divider divider-primary divider-small mb-xl">
+                                    <hr>
                                 </div>
+                                <ul class="nav nav-list mb-xl show-bg-active">
+                                <?php
+                                $dataprojekwherekategori = $this->projectsmodel->getByIdKategori($datadetailprojeks->id_kategori_kategori_project);
+                                foreach ($dataprojekwherekategori as $projekkat) {
+                                    # code...
+                                
+                                ?>
+                                    <li><a data-hash="" data-hash-offset="110"
+                                            href="<?php echo base_url('id/projek/') ?><?= $projekkat->link_project ?>"><?= $projekkat->nama_project ?></a></li>
+                                <?php
+                                }
+                                ?>
+
+                                </ul>
                             </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <label>Subject *</label>
-                                        <input type="text" value="" data-msg-required="Please enter the subject."
-                                            maxlength="100" class="form-control" name="subject" id="subject" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <label>Message *</label>
-                                        <textarea maxlength="5000" data-msg-required="Please enter your message."
-                                            rows="10" class="form-control" name="customerRequest" id="message"
-                                            required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" value="Send Message" class="btn btn-primary btn-lg mb-xlg"
-                                        data-loading-text="Loading..." style="border-color: #0068a5 #0068a5 #035381">
-                                </div>
-                            </div>
-                        </form>
+                        </aside>
                     </div>
-                    <div class="col-md-6">
-                        <hr>
-                        <h4 class="heading-primary">The <strong>Office</strong></h4>
-                        <ul class="list list-icons list-icons-style-3 mt-xlg">
-                            <li><i class="fa fa-map-marker"></i> <strong>Address:</strong>
-                                PT Len Rekaprima Semesta<br />
-                                Jl. Soekarno-Hatta No 293 <br />
-                                Bandung 40235
-                                Indonesia
-                            </li>
-                            <li><i class="fa fa-phone"></i> <strong>Phone:</strong> 022-42831927</li>
-                            <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a
-                                    href="#">marketing@lenrekaprima.co.id</a></li>
-                        </ul>
-                        <hr>
+                    <div class="col-md-9">
+                        <h3><strong><?= $datadetailprojeks->nama_project ?></strong></h3>
+                        <p style="text-align: justify;"><?= $datadetailprojeks->deskripsi_project ?></p>
+                        <div class="post-image">
+                            <div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
+                                <div>
+                                    <div class="img-thumbnail">
+                                        <img class="img-responsive"
+                                            src="<?= $datadetailprojeks->gambar_project ?>"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5213578787643!2d107.599496214126!3d-6.947658694980461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e894e8f7296b%3A0x836bb9a76e9406bf!2sJl.+Soekarno-Hatta+No.293%2C+Kb.+Lega%2C+Bojongloa+Kidul%2C+Kota+Bandung%2C+Jawa+Barat+40235!5e0!3m2!1sid!2sid!4v1554429184690!5m2!1sid!2sid"
-                width="1170" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
         <!--Footer Start-->

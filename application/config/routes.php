@@ -8,8 +8,10 @@ $route['translate_uri_dashes'] = FALSE;
 $route['id/kategori'] = 'id/beranda'; //id/beranda, overview
 $route['id/kategori/(:any)'] = 'id/kategorimaintenance'; //id/beranda, overview
 $route['id/maintenance/(:any)'] = 'id/detail_maintenance'; 
+$route['id/projek/(:any)'] = 'id/projek'; 
 
 
 $route['id/category'] = 'en/home'; //id/beranda, overview
 $route['en/category/(:any)'] = 'en/categorymaintenance'; //id/beranda, overview
 $route['en/maintenance/(:any)'] = 'en/detail_maintenance'; 
+$route['en/project/(:any)'] = 'en/project'; 

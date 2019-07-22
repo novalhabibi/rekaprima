@@ -6,6 +6,7 @@ class En extends CI_Controller {
         parent::__construct();
         $this->load->model('kategorimaintenancesmodel');
          $this->load->model('maintenancesmodel');
+         $this->load->model('projectsmodel');
     }
 
     public function home(){
@@ -49,6 +50,14 @@ class En extends CI_Controller {
         // print_r($datadetailmaintenances);
         // die();
         $this->load->view('en/ourbusiness/detailmaintenance',$data);
+    }
+
+    public function project() {
+        $link = $this->uri->segment(3);
+        $data['datadetailprojects'] = $this->projectsmodel->getByLink($link);
+        // print_r($data['datadetailprojeks']);
+        // die();
+        $this->load->view('en/project/detailproject',$data);
     }
 
 

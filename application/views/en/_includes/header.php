@@ -22,6 +22,15 @@ switch ($link) {
     case 'commissioners':
         $link = "id/komisaris";
         break;
+    case 'rekrutmen':
+        $link = "id/rekrutmen";
+        break;
+    case 'gallery':
+        $link = "id/galeri";
+        break;
+    case 'contact':
+        $link = "id/kontak";
+        break;
     
     default:
         $link = "id/beranda";
@@ -37,7 +46,7 @@ $CI->load->model('projectsmodel');
 $result = $CI->kategorimaintenancesmodel->getAll();
 $maintenances = $CI->maintenancesmodel->getAll();
 $kategoriprojects = $CI->kategoriprojectsmodel->getAll();
-
+$projects = $CI->projectsmodel->getAll();
 
 foreach ($result->result() as $link_kategori) {
     if ($link_kategori->link_kategori_maintenance_en == $konten) {
@@ -52,8 +61,7 @@ foreach ($maintenances->result() as $maintenance) {
     }
 }
 
-// Ini Perulangan Projects
-$projects = $CI->projectsmodel->getAll();
+
 // Ini Perulangan Project
 foreach ($projects->result() as $project) {
     if ($project->link_project_en == $konten) {
@@ -209,7 +217,7 @@ foreach ($projects->result() as $project) {
                                                         
                                                     ?>
                                                     <li><a
-                                                            href="<?php echo base_url('id/projek/') ?><?=  $project->link_project ?>"><i
+                                                            href="<?php echo base_url('en/project/') ?><?=  $project->link_project ?>"><i
                                                                 class="fa fa-chevron-right" aria-hidden="true"></i>
                                                            <?=  $project->name_project_en ?></a></li>
                                                     <?php

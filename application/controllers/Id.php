@@ -6,13 +6,13 @@ class Id extends CI_Controller {
         parent::__construct();
         $this->load->model('kategorimaintenancesmodel');
         $this->load->model('maintenancesmodel');
+        $this->load->model('projectsmodel');
+
+
     }
 
     public function beranda() {
-        // $data = array(
-        //     'kategorimaintenances' => $this->kategorimaintenancesmodel->getAll(), 
-        // );
-        // $this->load->view('id/beranda',$data);
+     
         $this->load->view('id/beranda');
     }
 
@@ -58,8 +58,12 @@ class Id extends CI_Controller {
 
 
 
-    public function project() {
-        $this->load->view('id/project/mainlinedtbaturaja');
+    public function projek() {
+        $link = $this->uri->segment(3);
+        $data['datadetailprojeks'] = $this->projectsmodel->getByLink($link);
+        // print_r($data['datadetailprojeks']);
+        // die();
+        $this->load->view('id/project/detailprojek',$data);
     }
 
 
@@ -200,7 +204,7 @@ class Id extends CI_Controller {
         $this->load->view('id/news/2019/sinergi-industri-dan-pendidikan');
     }
 
-    public function contact() {
+    public function kontak() {
         $this->load->view('id/contact');
     }
 }

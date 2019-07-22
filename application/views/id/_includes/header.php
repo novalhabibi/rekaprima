@@ -24,6 +24,15 @@ switch ($link) {
     case 'komisaris':
         $link = "en/commissioners";
         break;
+    case 'rekrutmen':
+        $link = "en/rekrutmen";
+        break;
+    case 'galeri':
+        $link = "en/gallery";
+        break;
+    case 'kontak':
+        $link = "en/contact";
+        break;
     
     default:
         $link = "en/home";
@@ -39,6 +48,7 @@ $CI->load->model('projectsmodel');
 $result = $CI->kategorimaintenancesmodel->getAll();
 $maintenances = $CI->maintenancesmodel->getAll();
 $kategoriprojects = $CI->kategoriprojectsmodel->getAll();
+$projects = $CI->projectsmodel->getAll();
 
 
 // Ini Perulangan Kateori Maintenance
@@ -57,8 +67,7 @@ foreach ($maintenances->result() as $maintenance) {
 }
 
 // Ini Perulangan Projects
-$projects = $CI->projectsmodel->getAll();
-// Ini Perulangan Project
+
 foreach ($projects->result() as $project) {
     if ($project->link_project == $konten) {
         $link="en/project/".$project->link_project_en;
@@ -212,7 +221,7 @@ foreach ($projects->result() as $project) {
                                                         
                                                     ?>
                                                     <li><a
-                                                            href="<?php echo base_url('en/project/') ?><?=  $project->link_project_en ?>"><i
+                                                            href="<?php echo base_url('id/projek/') ?><?=  $project->link_project ?>"><i
                                                                 class="fa fa-chevron-right" aria-hidden="true"></i>
                                                            <?=  $project->nama_project ?></a></li>
                                                     <?php
