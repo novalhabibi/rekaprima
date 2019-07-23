@@ -1,5 +1,7 @@
 <?php
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 Class projectsmodel extends CI_Model {
 
     public $_table = "projects";

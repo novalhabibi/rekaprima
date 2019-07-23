@@ -1,5 +1,7 @@
 <?php
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class kategorimaintenancesmodel extends CI_Model {
 
     public $_table = "kategori_maintenances";

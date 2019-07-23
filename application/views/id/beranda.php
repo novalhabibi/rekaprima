@@ -85,7 +85,8 @@
             <div style="margin-bottom:80px">
 
                 <!-- Sliders -->
-                <?php $this->load->view('id/_includes/sliders.php') ?>
+              
+            <?php $this->load->view('id/_includes/sliders.php') ?>
                 <!-- End Sliders -->
 
             </div><!-- /.container -->
@@ -318,6 +319,22 @@
                             <div class="col-md-7">
                                 <div class="owl-carousel owl-theme"
                                     data-plugin-options="{'items': 1, 'margin': 10, 'autoplay':true}">
+                                    <div class="box-item">
+                                        <div class="box-post">
+                                            <h1 class="post-title">
+                                                <a
+                                                    href="<?php echo base_url('id/news_2019_sinergi_industri_dan_pendidikan') ?>">
+                                                    Sinergi Industri dan Pendidikan
+                                                </a>
+                                            </h1>
+                                            <span class="meta">
+                                                <span class="label label-secondary">Berita Terbaru</span>
+                                                <span><i class="fa fa-calendar"></i> 2019-04-30 10:00:00</span>
+                                            </span>
+                                        </div>
+                                        <img src="<?php echo base_url('assets/media/image/event/newevent6.jpg') ?>"
+                                            alt="Sinergi Industri dan Pendidikan" class="img-responsive">
+                                    </div>
                                     <div class="box-item">
                                         <div class="box-post">
                                             <h1 class="post-title">

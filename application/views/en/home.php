@@ -83,96 +83,10 @@
         <?php $this->load->view('en/_includes/header.php') ?>
         <div class="main" role="main">
             <div style="margin-bottom:80px">
-                <div id="carousel-example-generic" class="carousel slide">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
-                    </ol>
+                 <!-- Sliders -->
+                <?php $this->load->view('en/_includes/sliders.php') ?>
+                <!-- End Sliders -->
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_51.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    SUPPORT
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4 style="text-align: left;"><span>Len Rekaprima Semesta always makes sure to
-                                            maintain the functionality of the railway system equipment on
-                                            periodically.<br /></span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_Url('assets/media/image/slider/Rekaprima_44.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    MAINTAIN
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Maintain a system supported by PT. Len Rekaprima
-                                            Semesta as a subsidiary of PT. Len Railway Systems.</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_43.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    AGILE
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Become the most reliable world-class partner for
-                                            the Railway Systems.</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_50.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    RESPONSIBLE
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Len Rekaprima Semesta is always ready to provide
-                                            quality in accordance with customer demand, and provide the best
-                                            service.</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_52.jpg') ?>"
-                                class="img-responsive" />
-                            <div class="carousel-caption animated fadeInLeft">
-                                <h2 class="slide-text-heading" data-animation="animated bounceInLeft">
-                                    TOTAL
-                                </h2>
-                                <h4 class="slide-text-desc" data-animation="animated bounceInUp">
-                                    <h4><span style="color: #ffffff;">Contributing to improving people's productivity
-                                            and mobility through a reliable and safe Railway System.</span></h4>
-                                </h4>
-                            </div>
-                        </div>
-                    </div><!-- /.carousel-inner -->
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div><!-- /.carousel -->
             </div><!-- /.container -->
             <div class="container">
                 <div class="row">
