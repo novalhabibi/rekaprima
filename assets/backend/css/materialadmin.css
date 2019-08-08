@@ -2709,6 +2709,12 @@ section.full-bleed {
     margin-top: -9px;
     margin-bottom: -6px;
 }
+.section-header-float {
+    position: relative;
+    height: 64px;
+    padding-bottom: 8px;
+    padding-top: -10px;
+}
 
 .section-header h2 {
     margin-top: -3px;

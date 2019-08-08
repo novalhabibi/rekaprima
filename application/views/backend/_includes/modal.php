@@ -1,85 +1,125 @@
 <!-- Logout -->
-<script>
-$('#logout').on('click', function(e) {
-    toastr.warning(
-        "Apakah anda yakin akan keluar ? <br><a class='btn btn-danger btn-sm' href='dashboard/logout'>Keluar</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-primary btn-sm'>batal</button> ",
-        'Keluar', {
-            "positionClass": "toast-top-center"
-        })
-})
-</script>
+<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">
+                    <i class="fa fa-sign-out"></i>
+                    Keluar</h2>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center"> Apakah anda yakin akan keluar ? </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- End Logout -->
 
+<!-- Hapus Via FORM -->
+<div class="modal fade" id="hapus" tabindex="-1" role="dialog" aria-labelledby="hapus" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-<!-- Hapus -->
-<script type="text/javascript">
-$('.hapus').click(function(e) {
-    e.preventDefault();
-    var link = $(this).attr('href');
-    $('#btn-delete').link;
+                <h3 class="modal-title" id="simpleModalLabel">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    Hapus</h3>
+            </div>
+            <?php echo form_open('dashboard/admin/hapus') ?>
 
-    toastr.error(
-        "Apakah anda yakin akan keluar ? <br><a class='btn btn-danger btn-sm'  href='" + link +
-        "'>Hapus</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-primary btn-sm'>batal</button> ",
-        'Hapus', {
-            "positionClass": "toast-top-center"
-        }
-    )
-});
-</script>
+            <div class="modal-body">
+                <h5 class="text-center">Apakah anda yakin akan mengahpus data ini ?</h5>
+                <input type="hidden" name="id_admin" id="bookId" value="" />
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn ink-reaction btn-raised btn-default"
+                    data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn ink-reaction btn-raised btn-danger">Hapus</button>
+            </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- End Hapus -->
-<!-- Edit -->
-<script type="text/javascript">
-$('.edit').click(function(e) {
-    e.preventDefault();
-    var link = $(this).attr('href');
-    $('#btn-delete').link;
+<!-- hapus -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">
+                    <i class="fa fa-edit"></i>
+                    Edit</h2>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center"> Apakah anda yakin akan Edit data ini ? </h5>
 
-    toastr.warning(
-        "Apakah anda yakin akan Edit ? <br><a class='btn btn-info btn-sm'  href='" + link +
-        "'>Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class='btn btn-primary btn-sm'>batal</button> ",
-        'Edit', {
-            "positionClass": "toast-top-center"
-        }
-    )
-});
-</script>
-<!-- End Edit -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn ink-reaction btn-raised btn-default"
+                    data-dismiss="modal">Batal</button>
+                <a href="#" id="btn-edit" class="btn ink-reaction btn-raised btn-info">Edit</a>
 
-
-<?php
-if ($this->session->flashdata('warning') == true):
-?>
-<script>
-toastr.warning("<?= $this->session->flashdata('warning') ?>", 'Warning', {
-    "positionClass": "toast-top-center"
-})
-</script>
-<?php
-endif;
-?>
-
-<?php
-if ($this->session->flashdata('error') == true):
-?>
-<script>
-toastr.error("<?= $this->session->flashdata('error') ?>", 'Error', {
-    "positionClass": "toast-top-center"
-})
-</script>
-<?php
-endif;
-?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End hapus -->
 
 
-<?php
-if ($this->session->flashdata('success') == true):
-?>
-<script>
-toastr.success("<?= $this->session->flashdata('success') ?>", 'Success', {
-    "positionClass": "toast-top-center"
-})
-</script>
-<?php
-endif;
-?>
+<!-- FROM MOdal Confirm Save -->
+<!-- modal -->
+<div id="SimpanKonfirmasi" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                 <h3 id="myModalLabel3">
+                     <i class="fa fa-plus-circle"></i>
+                     Tambah</h3>
+
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Apakah anda yakin menyimpan data ini ?</h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn ink-reaction btn-raised" data-dismiss="modal" aria-hidden="true">Batal</button>
+                <button class="btn ink-reaction btn-raised btn-primary" id="SubForm">Ya, simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End FROM MOdal Confirm Save -->
+<!-- FROM MOdal Confirm EDIT -->
+<!-- modal -->
+<div id="UpdateKonfirmasi" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                 <h3 id="myModalLabel3">
+                     <i class="fa fa-edit-circle"></i>
+                     EDIT</h3>
+
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center">Apakah anda yakin menyimpan pembaruan data ini ?</h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn ink-reaction btn-raised" data-dismiss="modal" aria-hidden="true">Batal</button>
+                <button class="btn ink-reaction btn-raised btn-primary" id="Btn-Update">Ya, perbarui</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End FROM MOdal Confirm EDIT -->

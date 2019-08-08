@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+// Membuat Default Waktu Indonesia
+date_default_timezone_set("Asia/Jakarta");
+
+
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER

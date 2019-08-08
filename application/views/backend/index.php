@@ -519,6 +519,13 @@
         <!--end #menubar-->
         <!-- END MENUBAR -->
 
+        
+        <!-- Modal -->
+    
+        <?php $this->load->view('backend/_includes/modal.php'); ?>
+
+
+
 
 
 
@@ -544,9 +551,9 @@
     <!-- END JAVASCRIPT -->
 
 
-    <!-- Modal -->
-    <?php $this->load->view('backend/_includes/modal.php'); ?>
-   
+    <!-- JS -->
+    <?php $this->load->view('backend/_includes/js.php'); ?>
+
 </body>
 
 </html>

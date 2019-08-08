@@ -20,7 +20,11 @@ $route['dashboard/form_validation'] = 'backendcontroller/form_validation';
 
 
 
-$route['dashboard/admin/tambah'] = 'backendcontroller/tambah';
+$route['dashboard/admin'] = 'admin';
+$route['dashboard/admin/tambah'] = 'admin/tambah';
+$route['dashboard/admin/edit/(:any)'] = 'admin/edit';
+$route['dashboard/admin/update'] = 'admin/update';
+$route['dashboard/admin/hapus'] = 'admin/hapus';
 // Akhir Backend
 
 

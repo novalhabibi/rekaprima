@@ -40,9 +40,9 @@
 
     <!-- BEGIN DASHBOARD -->
     <li>
-        <a href="http://www.codecovers.eu/materialadmin/layouts/builder">
+        <a href="<?= site_url('dashboard/admin') ?>">
             <div class="gui-icon"><i class="md md-web"></i></div>
-            <span class="title">Layouts</span>
+            <span class="title">Admin</span>
         </a>
     </li>
     <!--end /menu-li -->

@@ -15,7 +15,7 @@ class adminmodel extends CI_Model {
 
     public function getById($id)
     {
-        return $this->db->get_where($this->_table,['id'=>$id]);
+        return $this->db->get_where($this->_table,['id_admin'=>$id]);
     }
     public function login($where)
     {
@@ -23,11 +23,25 @@ class adminmodel extends CI_Model {
         return $this->db->get($this->_table);
     }
 
+    public function simpan($data)
+    {
+        return $this->db->insert($this->_table,$data);
+    }
+
     public function getByLink($link)
     {
         $where = "link_kategori_project='$link' OR link_kategori_project_en='$link'";
         $this->db->where($where);
         return $this->db->get($this->_table)->row();
+    }
+
+    public function update($data,$id_admin)
+    {
+        return $this->db->update($this->_table,$data,['id_admin'=>$id_admin]);
+    }
+    public function hapus($id_admin)
+    {
+        return $this->db->delete($this->_table,['id_admin'=>$id_admin]);
     }
 
 }

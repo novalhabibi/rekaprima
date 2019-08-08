@@ -15,4 +15,7 @@
     <link type="text/css" rel="stylesheet" href="<?= base_url() ?>/assets/backend/css/material-design-iconic-font.css" />
 
     <!-- toastr css -->
-    <link type="text/css" rel="stylesheet" href="<?= base_url() ?>/assets/backend/toastr/toastr.min.css" />
+
+    <link type="text/css" rel="stylesheet" href="<?= base_url() ?>/assets/backend/css/toastr.css" />
+    <link type="text/css" rel="stylesheet" href="<?= base_url() ?>/assets/backend/css/animate.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialadmin/css/theme-default/libs/toastr/toastr.css?1422823374" /> -->

@@ -588,7 +588,10 @@
 .toast-message a:hover {
   color: #f2f3f3;
   text-decoration: none;
+  
 }
+
+
 .toast-close-button {
   position: relative;
   right: -0.3em;
@@ -696,6 +699,10 @@ button.toast-close-button {
 	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacityPercent})";
 	filter: ~"alpha(opacity=@{opacityPercent})";*/
 }
+
+
+
+
 #toast-container > :hover {
   /*	-moz-box-shadow: @boxShadow;
 	-webkit-box-shadow: @boxShadow;
@@ -779,6 +786,10 @@ button.toast-close-button {
     width: 25em;
   }
 }
+
+
+
+
 #toast-container > div {
   margin-bottom: 8px;
   padding: 12px 24px;

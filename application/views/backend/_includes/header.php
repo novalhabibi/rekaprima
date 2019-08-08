@@ -136,8 +136,11 @@
                          <li class="divider"></li>
                          <li><a href="http://www.codecovers.eu/materialadmin/pages/locked"><i
                                      class="fa fa-fw fa-lock"></i> Lock</a></li>
-                         <li><a href="#" id="logout"><i
-                                     class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+                         <li><a href="#" data-toggle="modal" data-target="#logout"><i
+                                     class="fa fa-fw fa-power-off text-danger"></i> Logout</a>
+                                    
+                                    
+                        </li>
                      </ul>
                      <!--end .dropdown-menu -->
                  </li>

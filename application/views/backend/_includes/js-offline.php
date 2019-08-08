@@ -17,7 +17,7 @@
 <script src="<?= base_url() ?>/assets/backend/js/AppVendor.js"></script>
 <script src="<?= base_url() ?>/assets/backend/js/Demo.js"></script>
 
-
+<script src="<?= base_url() ?>assets/backend/toastr/toastr.min.js"></script>
 <!-- toastr -->
- <script src="<?= base_url() ?>/assets/backend/toastr/toastr.min.js"></script>
+ <!-- <script src="<?php //base_url() ?>/assets/backend/toastr/toastr.min.js"></script> -->
 <!-- END OFFLINE -->
