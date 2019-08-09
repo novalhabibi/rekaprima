@@ -84,6 +84,40 @@ toastr.error(message, 'Error');
 endif;
 ?>
 <!-- END Error Notif -->
+<!-- Info Notif -->
+<?php
+if ($this->session->flashdata('info') == true):
+?>
+<script>
+toastr.clear();
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "show",
+    "hideMethod": "hide"
+}
+
+var message =
+    '<?= $this->session->flashdata('info') ?>';
+
+toastr.info(message, 'Info');
+</script>
+<?php
+endif;
+?>
+<!-- END Info Notif -->
+
 
 
 <!-- HAPUS -->
@@ -217,3 +251,19 @@ $("#EditAdmin").validate({
 });
 </script>
 <!-- End Update KOnfirmasi -->
+
+
+<!-- Smoth refresh -->
+<script>
+
+    // function autoRefreshPage()
+
+    // {
+
+    //     window.location = window.location.href;
+
+    // }
+
+    // setInterval('autoRefreshPage()', 10000);
+
+</script>

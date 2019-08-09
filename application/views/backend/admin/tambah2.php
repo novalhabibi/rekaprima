@@ -74,7 +74,7 @@
                         </button>
                         <strong>Error!</strong>
                         <p>
-                            <?php echo validation_errors(); ?>
+                            <?php echo validation_errors('<li>','</li>'); ?>
 
                         </p>
                     </div>

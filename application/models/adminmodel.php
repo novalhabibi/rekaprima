@@ -39,6 +39,15 @@ class adminmodel extends CI_Model {
     {
         return $this->db->update($this->_table,$data,['id_admin'=>$id_admin]);
     }
+    public function updateWhere($data,$where)
+    {
+        return $this->db->update($this->_table,$data,$where);
+    }
+    public function updateWhereId($data,$id)
+    {
+        return $this->db->update($this->_table,$data,['id_admin'=>$id]);
+    }
+
     public function hapus($id_admin)
     {
         return $this->db->delete($this->_table,['id_admin'=>$id_admin]);

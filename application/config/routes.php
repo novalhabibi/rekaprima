@@ -6,10 +6,11 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // Backend
-$route['dashboard'] = 'backendcontroller/dashboard';
-$route['dashboard/logout'] = 'backendcontroller/logout';
-$route['dashboard/login'] = 'backendcontroller/login';
-$route['dashboard/ceklogin'] = 'backendcontroller/ceklogin';
+$route['dashboard'] = 'backendcontroller';
+$route['dashboard/logout'] = 'auth/logout';
+$route['dashboard/logout_all'] = 'auth/logout_all';
+$route['dashboard/login'] = 'auth/login';
+$route['dashboard/ceklogin'] = 'auth/ceklogin';
 
 
 

@@ -44,14 +44,15 @@ class Admin extends CI_Controller {
         if (empty($this->input->post('password_admin'))) {
             $password = $this->input->post('password_lama_admin');
         } else {
-            $this->encryption->initialize(
-                    array(
-                            'cipher' => 'aes-128',
-                            'mode' => 'ctr',
-                            'key' => 'enha3'
-                    )
-            );
-            $password = $this->encryption->encrypt($this->input->post('password_admin'));
+            // $this->encryption->initialize(
+            //         array(
+            //                 'cipher' => 'aes-128',
+            //                 'mode' => 'ctr',
+            //                 'key' => 'enha3'
+            //         )
+            // );
+            // $password = $this->encryption->encrypt($this->input->post('password_admin'));
+            $password = md5($this->input->post('password_admin'));
             // echo "<br>";
             // echo  $this->encryption->decrypt($password);
         }
@@ -152,20 +153,20 @@ class Admin extends CI_Controller {
                 $uploadedFile = "./uploads/avatars/".$uploadData['file_name'];
                
                 
-                $password = $this->input->post('password_admin');
-                $this->encryption->initialize(
-                        array(
-                                'cipher' => 'aes-128',
-                                'mode' => 'ctr',
-                                'key' => 'enha3'
-                        )
-                );
-                $ciphertext = $this->encryption->encrypt($password);
+                $password =md5($this->input->post('password_admin'));
+                // $this->encryption->initialize(
+                //         array(
+                //                 'cipher' => 'aes-128',
+                //                 'mode' => 'ctr',
+                //                 'key' => 'enha3'
+                //         )
+                // );
+                // $ciphertext = $this->encryption->encrypt($password);
                 // $this->encryption->decrypt($ciphertext);
 
                 $simpanadmin = array(
                     'username_admin'=>$this->input->post('username_admin'),
-                    'password_admin'=>$ciphertext,
+                    'password_admin'=>$password,
                     'nama_admin'=>$this->input->post('nama_admin'),
                     'level_admin'=>$this->input->post('level_admin'),
                     'foto_admin'=>$uploadedFile,

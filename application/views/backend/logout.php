@@ -72,37 +72,38 @@
                                     'class' => 'form floating-label', 
                                     'id'=>'dischargeform'
                                 );
-                                echo form_open('dashboard/login', $attributes);
+                                echo form_open('dashboard/logout_all', $attributes);
                                  ?>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username">
+                            <input type="text" class="form-control" id="username" required name="username">
                             <label for="username">Username</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" required name="password">
                             <label for="password">Password</label>
                             <!-- <p class="help-block"><a href="#">Forgotten?</a></p> -->
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col-xs-6 text-left">
-                                <div class="checkbox checkbox-inline checkbox-styled">
-                                    <label>
-                                        <input type="checkbox" name="remember_me" value="1"> <span>Remember me</span>
-                                    </label>
-                                </div>
-                            </div>
+                            
                             <!--end .col -->
+                            
                             <div class="text-center">
-                                <button class="btn btn-primary btn-raised" type="submit">Login</button>
+                                <button class="btn btn-primary btn-sm btn-raised" type="submit">Keluar dari semua Akun</button>
+                                
                             </div>
+                            
+                            
                             <!--end .col -->
                         </div>
                         <!--end .row -->
                         </form>
+                                
                     </div>
+
                     <!--end .col -->
+                    
                     <div class="col-sm-3">
                     </div>
                 </div>

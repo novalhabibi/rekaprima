@@ -123,7 +123,7 @@
                          <img src="http://www.codecovers.eu/assets/img/modules/materialadmin/avatar1.jpg?1422538623"
                              alt="" />
                          <span class="profile-info">
-                             Daniel Johnson
+                            <?= $this->session->nama_admin ; ?>
                              <small>Administrator</small>
                          </span>
                      </a>

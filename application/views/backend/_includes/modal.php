@@ -13,8 +13,8 @@
                 <h5 class="text-center"> Apakah anda yakin akan keluar ? </h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn ink-reaction btn-raised btn-default" data-dismiss="modal">Batal</button>
+                <a href="<?= site_url('dashboard/logout') ?>" class="btn ink-reaction btn-raised btn-primary">Ya</a>
             </div>
         </div>
     </div>

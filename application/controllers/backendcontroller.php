@@ -11,19 +11,30 @@ class Backendcontroller extends CI_Controller {
         // $this->load->model('karyawanmodel');
 		$this->load->model('adminmodel');
 		$this->load->library('form_validation');
+		$this->load->library('encryption');
+		$this->load->helper('cookie');
+
+		if (!isset($_COOKIE['cookie_lenrekap']) AND ($this->session->has_userdata('id_admin') == FALSE )) {
+			// cek realtime log_status admin
+			$this->session->set_flashdata('error', 'Sessi anda telah habis');
+			// redirect('dashboard/logout');
+		}
+		$cek = $this->adminmodel->getById($this->session->id_admin)->row();
+		$ip_addres= $this->getUserIpAddr();
+		if ($cek->log_status == $ip_addres ) {
+		}else{
+			$this->session->set_flashdata('error', 'Silahkan login ulang');
+			redirect('dashboard/logout');
+		}
         
 	}
 	
 	public function index()
 	{
-		$cek = 1;
-		if ($cek ==1) {
-			redirect('dashboard');
-		} else {
-			redirect('login');
-		}
+	
+		$this->load->view('backend/index.php');
 		
-		// $this->load->view('backend/index.php');
+		
 	}
 	
 	public function dashboard()
@@ -61,72 +72,117 @@ class Backendcontroller extends CI_Controller {
 		}
 	}
     
-	public function login()
-	{
-		
-		$this->form_validation->set_rules('username', 'Username', 'required');
-    	$this->form_validation->set_rules('password', 'Password', 'required');
-		
-
-		if ($this->form_validation->run() === FALSE)
-		{
-			$this->load->view('backend/login.php');
-
-		}
-		else
-		{
-			
-			$username_admin = $this->input->post('username');
-			$password_admin = md5($this->input->post('password'));
-			$where = array(
-				'username_admin =' => $username_admin, 
-				'password_admin =' => $password_admin
-			);
-			$response = $this->adminmodel->login($where);
-			if ($response->num_rows() == 0) {
-				echo "Tidak ada";
-			} else {
-				$dataadmin = $response->row_array();
-				
-				$this->session->set_userdata($dataadmin);
-				echo $this->session->id_admin;
-				// print_r($datasession);
-			}
-			
-			
-			die();
-			$this->session->set_flashdata('success', 'Anda telah Login');
-			redirect('dashboard');
-		}
-		
-	}
-	// public function ceklogin()
+	// public function login()
 	// {
+	// 	if (isset($_COOKIE['cookie_lenrekap'])) {
+	// 		redirect('dashboard');
+	// 	}
+		
 	// 	$this->form_validation->set_rules('username', 'Username', 'required');
     // 	$this->form_validation->set_rules('password', 'Password', 'required');
-	// 	$this->load->view('backend/login.php');
+		
 
 	// 	if ($this->form_validation->run() === FALSE)
 	// 	{
-	// 		$this->load->view('templates/header', $data);
-	// 		$this->load->view('news/create');
-	// 		$this->load->view('templates/footer');
+	// 		$this->load->view('backend/login.php');
 
 	// 	}
 	// 	else
 	// 	{
-	// 		$this->news_model->set_news();
-	// 		$this->load->view('news/success');
-	// 	}
+	// 		$username_admin = $this->input->post('username');
+	// 		$password = md5($this->input->post('password'));
+			
+	// 		if (empty($remember_me = $this->input->post('remember_me'))) {
+	// 				$datacookie =0;
+	// 		} else {
+	// 				$remember_me = $this->input->post('remember_me');
+	// 				$value = md5(rand());
+	// 			    $cookie= array(
+	// 						'name'   => 'cookie_lenrekap',
+	// 						'value'  => $value,
+	// 						'expire' => '3600',
+	// 					);
+	// 				$this->input->set_cookie($cookie);
+	// 				$datacookie =	$value;
+					
+	// 		}
+	// 		// die();
+	// 		// $this->encryption->initialize(
+	// 		// 		array(
+	// 		// 				'cipher' => 'aes-128',
+	// 		// 				'mode' => 'ctr',
+	// 		// 				'key' => 'enha3'
+	// 		// 		)
+	// 		// );
+	// 		// echo $password_admin = $this->encryption->encrypt($password);
+	// 		// echo  $this->encryption->decrypt("0a035521e8dc866ea43bfe3f76ba1b53e9e127ff8df95e771ead5d5794f61054e6a73244d926290e383fbe34c2afc727fd36a32f4c984b0bcb16cda85fba726fn8BndVcc0mXb4aidZYGyL6+nonY=");
+	// 		$where = array(
+	// 			'username_admin =' => $username_admin, 
+	// 			'password_admin =' => $password
+	// 		);
 
+	// 		$updateLogin = array(
+	// 			'cookie ' => $datacookie, 
+	// 			'log_status ' => 1
+	// 		);
+
+	// 		// print_r($updateLogin);
+
+	// 		$response = $this->adminmodel->login($where);
+	// 		$updateLogin = $this->adminmodel->updateWhere($updateLogin,$where);
+	// 		if ($response->num_rows() == 0) {
+	// 			echo "Tidak ada";
+	// 		} else {
+	// 			$dataadmin = $response->row_array();
+				
+	// 			$this->session->set_userdata($dataadmin);
+	// 			$this->session->id_admin;
+	// 			// print_r($datasession);
+				
+	// 		}
+			
+			
+	// 		// die();
+	// 		$this->session->set_flashdata('success', 'Anda telah Login');
+	// 		redirect('dashboard');
+	// 	}
+		
 	// }
+
+
+	 // GEt IP address
+	public function getUserIpAddr(){
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+			//ip from share internet
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+			//ip pass from proxy
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		}else{
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+		return $ip;
+	}
 
 
 	public function logout()
 	{
+		// print_r($this->session->userdata());
+		delete_cookie('cookie_lenrekap');
+		$id = $this->session->userdata('id_admin');
+		$updateLogin = array(
+				
+				'log_status ' => 0
+			);
+		$updateLogin = $this->adminmodel->updateWhereId($updateLogin,$id);
+		// die();
 		unset(
-					$_SESSION['some_name'],
-					$_SESSION['another_name']
+					$_SESSION['id_admin'],
+					$_SESSION['log_status'],
+					$_SESSION['username_admin'],
+					$_SESSION['password_admin'],
+					$_SESSION['level_admin'],
+					$_SESSION['nama_admin']
 			);
 
 		$this->session->set_flashdata('success', 'Anda telah logout');
