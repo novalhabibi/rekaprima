@@ -120,20 +120,17 @@
              <ul class="header-nav header-nav-profile">
                  <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
-                         <img src="http://www.codecovers.eu/assets/img/modules/materialadmin/avatar1.jpg?1422538623"
+                         <img src="<?= base_url() ?><?= $this->session->foto_admin ; ?>"
                              alt="" />
                          <span class="profile-info">
                             <?= $this->session->nama_admin ; ?>
-                             <small>Administrator</small>
+                             <small> <?= $this->session->level_admin == 1 ?'Super Admin':'Admin' ?></small>
                          </span>
                      </a>
                      <ul class="dropdown-menu animation-dock">
                          <li class="dropdown-header">Config</li>
                          <li><a href="http://www.codecovers.eu/materialadmin/pages/profile">My profile</a></li>
-                         <li><a href="http://www.codecovers.eu/materialadmin/pages/blog/post"><span
-                                     class="badge style-danger pull-right">16</span>My blog</a></li>
-                         <li><a href="http://www.codecovers.eu/materialadmin/pages/calendar">My appointments</a></li>
-                         <li class="divider"></li>
+                         
                          <li><a href="http://www.codecovers.eu/materialadmin/pages/locked"><i
                                      class="fa fa-fw fa-lock"></i> Lock</a></li>
                          <li><a href="#" data-toggle="modal" data-target="#logout"><i

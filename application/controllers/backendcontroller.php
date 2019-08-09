@@ -17,7 +17,7 @@ class Backendcontroller extends CI_Controller {
 		if (!isset($_COOKIE['cookie_lenrekap']) AND ($this->session->has_userdata('id_admin') == FALSE )) {
 			// cek realtime log_status admin
 			$this->session->set_flashdata('error', 'Sessi anda telah habis');
-			// redirect('dashboard/logout');
+			redirect('dashboard/logout_session');
 		}
 		$cek = $this->adminmodel->getById($this->session->id_admin)->row();
 		$ip_addres= $this->getUserIpAddr();

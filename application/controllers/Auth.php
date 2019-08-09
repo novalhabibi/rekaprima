@@ -193,6 +193,31 @@ class Auth extends CI_Controller {
 		redirect('dashboard/login');
 		
     }
+	public function logout_session()
+	{
+		// Hapus COokie
+        delete_cookie('cookie_lenrekap');
+		$id = $this->session->userdata('id_admin');
+		$updateLogin = array(
+				
+				'cookie' => 0,
+				'log_status' => 0
+			);
+		$updateLogin = $this->adminmodel->updateWhereId($updateLogin,$id);
+		// die();
+		unset(
+					$_SESSION['id_admin'],
+					$_SESSION['log_status'],
+					$_SESSION['username_admin'],
+					$_SESSION['password_admin'],
+					$_SESSION['level_admin'],
+					$_SESSION['nama_admin']
+			);
+
+		$this->session->set_flashdata('error', 'Waktu anda habis');
+		redirect('dashboard/login');
+		
+    }
     
     public function logout_all()
     {

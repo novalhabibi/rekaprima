@@ -11,6 +11,7 @@ $route['dashboard/logout'] = 'auth/logout';
 $route['dashboard/logout_all'] = 'auth/logout_all';
 $route['dashboard/login'] = 'auth/login';
 $route['dashboard/ceklogin'] = 'auth/ceklogin';
+$route['dashboard/logout_session'] = 'auth/logout_session';
 
 
 
