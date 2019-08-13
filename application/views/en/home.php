@@ -83,7 +83,7 @@
         <?php $this->load->view('en/_includes/header.php') ?>
         <div class="main" role="main">
             <div style="margin-bottom:80px">
-                 <!-- Sliders -->
+                <!-- Sliders -->
                 <?php $this->load->view('en/_includes/sliders.php') ?>
                 <!-- End Sliders -->
 
@@ -374,44 +374,13 @@
                 </div>
                 <div class="owl-carousel owl-theme stage-margin"
                     data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/LEN.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/LRS2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/KAI.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/egis.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/Angkasapura2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/MRT_Jakarta.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/Kemenhub2.png') ?>">
-                    </div>
-                    <div class="thumb-info custom-thumb-info-4">
-                        <img src="<?php echo base_url('assets/media/image/partner/akademi2.png') ?>">
-                    </div>
+
+                     <?php $this->load->view('id/_includes/patner.php') ?>
                 </div>
             </div>
         </div>
         <!--Footer Start-->
-        <footer class="footer-copyright" id="footer" style="padding: 30px; font-size: 14px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-11">
-                        <span class='copyright'>Copyright &copy; 2019 <a href="#">PT Len Rekaprima Semesta</a>. All
-                            rights reserved.</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php $this->load->view('id/_includes/footer.php') ?>
     </div>
     <!-- Vendor -->
     <script src="<?php echo base_url('assets/vendor/jquery/jquery-3.3.1.js') ?>"></script>

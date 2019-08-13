@@ -47,60 +47,28 @@
     </li>
     <!--end /menu-li -->
     <!-- END DASHBOARD -->
+    <!-- BEGIN CLIENT -->
+    <li>
+        <a href="<?= site_url('dashboard/client') ?>">
+            <div class="gui-icon"><i class="md md-account-box"></i></div>
+            <span class="title">Client</span>
+        </a>
+    </li>
+    <!--end /menu-li -->
+    <!-- END CLIENT -->
 
     <!-- BEGIN UI -->
     <li class="gui-folder">
         <a>
             <div class="gui-icon"><i class="fa fa-puzzle-piece fa-fw"></i></div>
-            <span class="title">UI elements</span>
+            <span class="title">Sliders</span>
         </a>
         <!--start submenu -->
         <ul>
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/colors"><span class="title">Colors</span></a></li>
+            <li><a href="<?= base_url('dashboard/slider') ?>"><span class="title">Slider IND</span></a></li>
 
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/typography"><span class="title">Typography</span></a>
-            </li>
+            
 
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/cards"><span class="title">Cards</span></a></li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/buttons"><span class="title">Buttons</span></a></li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/lists"><span class="title">Lists</span></a></li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/tabs"><span class="title">Tabs</span></a></li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/accordions"><span class="title">Accordions</span></a>
-            </li>
-
-            <li><a href="messages.php"><span class="title">Messages</span></a>
-            </li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/offcanvas"><span class="title">Off-canvas</span></a>
-            </li>
-
-            <li><a href="http://www.codecovers.eu/materialadmin/ui/grid"><span class="title">Grid</span></a></li>
-
-            <li class="gui-folder">
-                <a href="javascript:void(0);">
-                    <span class="title">Icons</span>
-                </a>
-                <!--start submenu -->
-                <ul>
-                    <li><a href="http://www.codecovers.eu/materialadmin/ui/icons/materialicons"><span
-                                class="title">Material Design Icons</span></a></li>
-
-                    <li><a href="http://www.codecovers.eu/materialadmin/ui/icons/fontawesome"><span class="title">Font
-                                Awesome</span></a></li>
-
-                    <li><a href="http://www.codecovers.eu/materialadmin/ui/icons/glyphicons"><span
-                                class="title">Glyphicons</span></a></li>
-
-                    <li><a href="http://www.codecovers.eu/materialadmin/ui/icons/skycons"><span
-                                class="title">Skycons</span></a></li>
-
-                </ul>
-                <!--end /submenu -->
-            </li>
             <!--end /menu-li -->
         </ul>
         <!--end /submenu -->

@@ -27,6 +27,25 @@ $route['dashboard/admin/tambah'] = 'admin/tambah';
 $route['dashboard/admin/edit/(:any)'] = 'admin/edit';
 $route['dashboard/admin/update'] = 'admin/update';
 $route['dashboard/admin/hapus'] = 'admin/hapus';
+
+
+
+$route['dashboard/slider'] = 'slider';
+$route['dashboard/slider/tambah'] = 'slider/tambah';
+$route['dashboard/slider/edit/(:any)'] = 'slider/edit';
+$route['dashboard/slider/update'] = 'slider/update';
+$route['dashboard/slider/hapus'] = 'slider/hapus';
+
+
+// BEGINING CLIENTS
+$route['dashboard/client'] = 'client';
+$route['dashboard/client/tambah'] = 'client/tambah';
+$route['dashboard/client/edit/(:any)'] = 'client/edit';
+$route['dashboard/client/update'] = 'client/update';
+$route['dashboard/client/hapus'] = 'client/hapus';
+// END CLIENTS
+
+
 // Akhir Backend
 
 

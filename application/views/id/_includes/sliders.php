@@ -35,7 +35,7 @@ $sliders = $CI->slidersmodel->sliders();
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="<?php echo base_url('assets/media/image/slider/Rekaprima_50.jpg') ?>"
+                            <img src="<?php echo base_Url() ?><?= $slider->gambar ?>"
                                 class="img-responsive" />
                             <div class="carousel-caption animated fadeInLeft">
                                 <h2 class="slide-text-heading" data-animation="animated bounceInLeft">

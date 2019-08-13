@@ -139,7 +139,7 @@ $(document).on("click", ".open-AddBookDialog", function() {
 
 <script>
 function hapus(x) {
-    $('.modal .modal-dialog').attr('class', 'modal-dialog ' + x + ' animated');
+    $('.modal .modal-dialog').attr('class', 'modal-dialog modal-notify modal-danger ' + x + ' animated');
     var myBookId = $(this).data('id');
 };
 $('#hapus').on('show.bs.modal', function(e) {
@@ -160,7 +160,7 @@ $('#hapus').on('hide.bs.modal', function(e) {
 function editConfirm(url) {
     $('#btn-edit').attr('href', url);
     var x = "lightSpeedIn";
-    $('.modal .modal-dialog').attr('class', 'modal-dialog ' + x + ' animated');
+    $('.modal .modal-dialog').attr('class', 'modal-dialog modal-danger' + x + ' animated');
     $('#editConfirm').modal();
 };
 </script>
@@ -210,6 +210,58 @@ $("#dischargeform").validate({
 });
 </script>
 <!-- End Simapn KOnfirmasi -->
+<!-- Simapn SLider KOnfirmasi -->
+<script>
+$("#slider").validate({
+    rules: {
+        judul: "required",
+        title: "required",
+        deskripsi: "required",
+        description: "required",
+        gambar: "required",
+        picture: "required",
+    },
+    messages: {
+        judul: "",
+        title: "",
+        deskripsi: "",
+        description: "",
+        gambar: "",
+        picture: "",
+    },
+    submitHandler: function(form) {
+        var x = "lightSpeedIn";
+        $('.modal .modal-dialog').attr('class', 'modal-dialog ' + x + ' animated');
+        $("#SimpanKonfirmasi").modal('show');
+        $('#SubForm').click(function() {
+            form.submit();
+        });
+
+         // Effek Modal
+        function simpan(x) {
+            $('.modal .modal-dialog').attr('class', 'modal-dialog ' + x + ' animated');
+            var myBookId = $(this).data('id');
+        };
+        $('#SimpanKonfirmasi').on('show.bs.modal', function(e) {
+            var anim = "lightSpeedIn";
+            simpan(anim);
+        })
+        $('#SimpanKonfirmasi').on('hide.bs.modal', function(e) {
+            var anim = "zoomOutUp";
+            simpan(anim);
+        })
+        // END Effek Modal
+
+
+    }
+});
+</script>
+<!-- End Simapn SLider KOnfirmasi -->
+
+
+
+
+
 <!-- Update KOnfirmasi -->
 <script>
 $("#EditAdmin").validate({

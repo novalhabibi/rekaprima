@@ -67,8 +67,27 @@ class Admin extends CI_Controller {
             if (read_file($this->input->post('foto_lama_admin'))) {
                 // jika ada maka hapus
                 if (unlink($this->input->post('foto_lama_admin'))) {
-                    echo "berhasil dihapus";
+                    $config['upload_path']   = 'uploads/avatars/';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                    $config['max_size']      = 1024;
+                    $config['remove_spaces'] = TRUE;
+                    $config['encrypt_name'] = TRUE; //Encript Nama file
+                    $this->load->library('upload', $config);
+                    //upload file to directory
+                    if($this->upload->do_upload('foto_admin')){
+                        $uploadData = $this->upload->data();
+                        $foto_admin = "./uploads/avatars/".$uploadData['file_name'];
+                
+                    }else{
+                        $foto_admin = $this->input->post('foto_lama_admin');
+                        $data= $this->upload->display_errors();
+                        $this->session->set_flashdata('errors', $data);
+                        redirect("dashboard/admin/edit/$id_admin");
+                        //  $this->load->view('backend/admin/tambah2');
+                    }
+                    
                 } else {
+                    $foto_admin = $this->input->post('foto_lama_admin');
                     $this->session->set_flashdata('error',"Terjadi Kelasahan");
                     redirect("dashboard/admin/edit/$id_admin");
                 }
@@ -214,7 +233,8 @@ class Admin extends CI_Controller {
 
     public function hapus()
     {
-        echo $id_admin = $this->input->post('id_admin');
+        $id_admin = $this->input->post('id_admin');
+        
         $this->adminmodel->hapus($id_admin);
         $this->session->set_flashdata('success', 'Berhasil Dihapus');
 		redirect('dashboard/admin');
