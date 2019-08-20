@@ -31,6 +31,8 @@
 
     <!-- END STYLESHEETS -->
     <link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/backend/css/dropzone-theme.css?1422823366" />
+    <link type="text/css" rel="stylesheet"
+        href="<?= base_url() ?>assets/backend/css/summernote.css?1422823374" />
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -114,31 +116,73 @@
 
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="judul"
-                                                    name="judul" data-rule-minlength="2" maxlength="30" required>
+                                                <input type="text" class="form-control" id="judul" name="judul"
+                                                    data-rule-minlength="2" maxlength="30" required>
                                                 <label for="judul">Judul news</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="title"
-                                                    name="title" data-rule-minlength="2" maxlength="30" required>
+                                                <input type="text" class="form-control" id="title" name="title"
+                                                    data-rule-minlength="2" maxlength="30" required>
                                                 <label for="title">Judul news English</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <input type="url" class="form-control" id="link_news"
-                                                    name="link_news" data-rule-minlength="2" maxlength="30" required>
-                                                <label for="link_news">Deskripsi</label>
+                                                <textarea id="summernote">
+                                                <br/>
+                                                
+                                                    <ul>
+                                                        <li>Changing block type</li>
+                                                        <li>Text formatting (bold, italic, strikethrough, underline)</li>
+                                                        <li>Setting text color</li>
+                                                        <li>Text aligning</li>
+                                                        <li>Inserting links</li>
+                                                        <li>Inserting pictures</li>
+                                                        <li>Creating a list (bulled or numbered)</li>
+                                                    </ul>
+                                                    <p><b>Options:</b></p>
+                                                    <ul>
+                                                        <li>Translations</li>
+                                                        <li>Using your own color palette</li>
+                                                        <li>Disabling/enabling tooltips</li>
+                                                    </ul>
+                                                </p>
+                                                </textarea>
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <p class="help-block">Minimum length 2 / Maximum length 30</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea id="simple-summernote">
+                                                <br/>
+                                                
+                                                    <ul>
+                                                        <li>Changing block type</li>
+                                                        <li>Text formatting (bold, italic, strikethrough, underline)</li>
+                                                        <li>Setting text color</li>
+                                                        <li>Text aligning</li>
+                                                        <li>Inserting links</li>
+                                                        <li>Inserting pictures</li>
+                                                        <li>Creating a list (bulled or numbered)</li>
+                                                    </ul>
+                                                    <p><b>Options:</b></p>
+                                                    <ul>
+                                                        <li>Translations</li>
+                                                        <li>Using your own color palette</li>
+                                                        <li>Disabling/enabling tooltips</li>
+                                                    </ul>
+                                                </p>
+                                                </textarea>
+                                                <label for="deskripsi">Description for english</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
                                             <div class="form-group">
                                                 <br>
-                                                <input type="file" class="form-control" id="icon_news"
-                                                    name="icon_news" accept="image/*" required>
+                                                <input type="file" class="form-control" id="icon_news" name="icon_news"
+                                                    accept="image/*" required>
                                                 <label for="icon_news">Icon news</label>
                                             </div>
 
@@ -229,10 +273,17 @@
     <script src="<?= base_url() ?>assets/backend/js/dropzone.min.js"></script>
 
 
+    <!-- CK editor -->
+    <script src="<?= base_url() ?>assets/backend/js/ckeditor.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/adapters/jquery.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/summernote.min.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/DemoFormEditors.js"></script>
+
+
     <!-- END JAVASCRIPT -->
     <!-- Modal -->
     <?php $this->load->view('backend/_includes/modal.php'); ?>
-    <?php $this->load->view('backend/_includes/js.php'); ?>
+    <?php $this->load->view('backend/_includes/js.php'); ?>\
 
 
 
