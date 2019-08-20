@@ -89,54 +89,39 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="blog-posts">
+                            <?php
+                            foreach ($berita as $news) {
+                                
+                            ?>
                             <article class="post post-medium">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="post-image">
                                             <div class="img-thumbnail">
-                                                <img src="<?php echo base_url('assets/media/image/event/newevent6.jpg') ?>"
-                                                    alt="" class="img-responsive" />
+                                                <img src="<?php echo base_url() ?><?php echo $news->gambar ?>" alt=""
+                                                    class="img-responsive" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="post-content">
                                             <h4><a
-                                                    href="<?php echo base_url('id/news_2019_sinergi_industri_dan_pendidikan') ?>">Sinergi
-                                                    Industri dan Pendidikan</a></h4>
+                                                    href="<?php echo base_url('id/news/') ?><?php echo $news->slug_judul ?>"><?php echo $news->judul ?></a>
+                                            </h4>
                                             <div class="post-meta">
                                                 <span class="label label-secondary">Berita</span>
-                                                <i class="fa fa-calendar"></i> 2019-04-30 10:00:00
+                                                <i class="fa fa-calendar"></i> <?php echo $news->tgl_posting ?>
                                             </div>
                                             <p></p>
                                         </div>
                                     </div>
                                 </div>
                             </article>
-                            <article class="post post-medium">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="post-image">
-                                            <div class="img-thumbnail">
-                                                <img src="<?php echo base_url('assets/media/image/event/newevent1.jpg') ?>"
-                                                    alt="" class="img-responsive" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="post-content">
-                                            <h4><a
-                                                    href="<?php echo base_url('id/news_2019_indonesia_railway_conference') ?>">Indonesia
-                                                    Railway Conference 2019</a></h4>
-                                            <div class="post-meta">
-                                                <span class="label label-secondary">Berita</span>
-                                                <i class="fa fa-calendar"></i> 2019-03-20 10:30:00
-                                            </div>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+
+
+                            <?php
+                            }
+                            ?>
                             <ul class="pagination pagination-lg pull-right">
                                 <li class="disabled"><a href="#">First</a></li>
                                 <li class="disabled"><a href="#">&laquo;</a></li>
@@ -149,7 +134,7 @@
                     </div>
                     <div class="col-md-3">
                         <aside class="siderbar">
-                            <h4 class="heading-primary">Archive</h4>
+                            <h4 class="heading-primary">Arsip</h4>
                             <ul class="nav nav-list mb-xlg">
                                 <li><a href="#">2019</a></li>
                             </ul>

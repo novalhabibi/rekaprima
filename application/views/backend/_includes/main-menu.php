@@ -41,10 +41,18 @@
     <!-- BEGIN DASHBOARD -->
     <li>
         <a href="<?= site_url('dashboard/admin') ?>">
-            <div class="gui-icon"><i class="md md-web"></i></div>
+            <div class="gui-icon"><i class="md md-person"></i></div>
             <span class="title">Admin</span>
         </a>
     </li>
+    <!-- News -->
+    <li>
+        <a href="<?= site_url('dashboard/news') ?>">
+            <div class="gui-icon"><i class="md md-web"></i></div>
+            <span class="title">News</span>
+        </a>
+    </li>
+    <!-- End NEws -->
     <!--end /menu-li -->
     <!-- END DASHBOARD -->
     <!-- BEGIN CLIENT -->

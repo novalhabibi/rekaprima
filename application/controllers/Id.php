@@ -7,6 +7,7 @@ class Id extends CI_Controller {
         $this->load->model('kategorimaintenancesmodel');
         $this->load->model('maintenancesmodel');
         $this->load->model('projectsmodel');
+        $this->load->model('newsmodel');
 
 
     }
@@ -64,6 +65,21 @@ class Id extends CI_Controller {
         // print_r($data['datadetailprojeks']);
         // die();
         $this->load->view('id/project/detailprojek',$data);
+    }
+
+
+    public function news() {
+        $data['berita'] = $this->newsmodel->getAll()->result();
+        $this->load->view('id/news/news',$data);
+    }
+
+
+    public function single_news() {
+        $slug = $this->uri->segment(3);
+        $data['news'] = $this->newsmodel->getBySlug($slug)->row();
+        // print_r($data['news']);
+        $this->load->view('id/news/single_news',$data);
+        // die();
     }
 
 
@@ -192,9 +208,7 @@ class Id extends CI_Controller {
         $this->load->view('id/media/galeri');
     }
 
-    public function news() {
-        $this->load->view('id/news/news');
-    }
+    
 
     public function news_2019_indonesia_railway_conference() {
         $this->load->view('id/news/2019/indonesia-railway-conference-2019');
@@ -207,4 +221,23 @@ class Id extends CI_Controller {
     public function kontak() {
         $this->load->view('id/contact');
     }
+
+    public function enc()
+    {
+        echo $data = "hehehe";
+
+         //Encrypt & Decrypt your message
+        $key = sodium_crypto_secretbox_keygen();
+        echo "<br>";
+        $enc = safeEncrypt($data, $key); //generates random  encrypted string (Base64 related)
+        echo $enc;
+        echo '<br>';
+        $dec = safeDecrypt($enc, $key); //decrypts encoded string generated via safeEncrypt function
+        echo $dec;
+        // print_r(get_loaded_extensions());
+    }
+
+    
+   
+
 }

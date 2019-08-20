@@ -5,8 +5,10 @@ class En extends CI_Controller {
     function __construct(){
         parent::__construct();
         $this->load->model('kategorimaintenancesmodel');
-         $this->load->model('maintenancesmodel');
-         $this->load->model('projectsmodel');
+        $this->load->model('maintenancesmodel');
+        $this->load->model('projectsmodel');
+        $this->load->model('newsmodel');
+
     }
 
     public function home(){
@@ -58,6 +60,23 @@ class En extends CI_Controller {
         // print_r($data['datadetailprojeks']);
         // die();
         $this->load->view('en/project/detailproject',$data);
+    }
+
+
+    public function news() {
+        $data['berita'] = $this->newsmodel->getAll()->result();
+        
+        $this->load->view('en/news/news',$data);
+    }
+
+
+    public function single_news() {
+        $slug = $this->uri->segment(3);
+        $data['news'] = $this->newsmodel->getBySlugTitle($slug)->row();
+        // print_r($data['news']);
+        // die();
+        $this->load->view('en/news/single_news',$data);
+        // die();
     }
 
 
@@ -186,9 +205,7 @@ class En extends CI_Controller {
         $this->load->view('en/media/gallery');
     }
 
-    public function news() {
-        $this->load->view('en/news/news');
-    }
+    
 
     public function news_2019_indonesia_railway_conference() {
         $this->load->view('en/news/2019/indonesia-railway-conference-2019');

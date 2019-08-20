@@ -33,6 +33,9 @@ switch ($link) {
     case 'kontak':
         $link = "en/contact";
         break;
+    case 'berita':
+        $link = "en/news";
+        break;
     
     default:
         $link = "en/home";
@@ -45,11 +48,14 @@ $CI->load->model('kategorimaintenancesmodel');
 $CI->load->model('maintenancesmodel');
 $CI->load->model('kategoriprojectsmodel');
 $CI->load->model('projectsmodel');
+$CI->load->model('newsmodel');
+
+
 $result = $CI->kategorimaintenancesmodel->getAll();
 $maintenances = $CI->maintenancesmodel->getAll();
 $kategoriprojects = $CI->kategoriprojectsmodel->getAll();
 $projects = $CI->projectsmodel->getAll();
-
+$datanews = $CI->newsmodel->getAll();
 
 // Ini Perulangan Kateori Maintenance
 
@@ -71,6 +77,14 @@ foreach ($maintenances->result() as $maintenance) {
 foreach ($projects->result() as $project) {
     if ($project->link_project == $konten) {
         $link="en/project/".$project->link_project_en;
+    }
+}
+
+
+// Ini Perulangan News
+foreach ($datanews->result() as $news) {
+    if ($news->slug_judul == $konten) {
+        $link="en/news/".$news->slug_title;
     }
 }
 ?>
@@ -292,7 +306,7 @@ foreach ($projects->result() as $project) {
                                                     <h4>Berita Terbaru</h4>
                                                 </span>
                                                 <ul class="dropdown-mega-sub-nav">
-                                                    <li><a href="<?php echo base_url('id/news') ?>" target="_self"><i
+                                                    <li><a href="<?php echo base_url('id/berita') ?>" target="_self"><i
                                                                 class="fa fa-chevron-right" aria-hidden="true"></i>
                                                             Berita</a></li>
                                                 </ul>

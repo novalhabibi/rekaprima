@@ -56,7 +56,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css') ?>">
 
-    <title>News | PT Len Rekaprima Semesta</title>
+    <title><?php echo $news->judul ?> | PT Len Rekaprima Semesta</title>
 
     <!-- Head Libs -->
     <script src="<?php echo base_url('assets/vendor/modernizr/modernizr.min.js') ?>"></script>
@@ -80,59 +80,51 @@
 
 <body>
     <div class="body sticky-header-active">
-        <?php $this->load->view('en/_includes/header.php') ?>
+        <?php $this->load->view('id/_includes/header.php') ?>
         <div class="main" role="main">
             <section class="page-header page-header-custom-background"
-                style="background-image:url(<?php echo base_url('assets/media/image/news2.jpg') ?>);height:250px;">
+                style="background-image:url(<?php echo base_url('assets/media/image/news.jpg') ?>);height:250px;">
             </section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="blog-posts">
-                            <?php
-                            foreach ($berita as $news) {
-                                
-                            ?>
-                            <article class="post post-medium">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="post-image">
+                        <div class="blog-post single-post">
+                            <article class="post blog-single-post">
+                                <div class="post-image">
+                                    <div class="owl-carousel owl-theme" data-plugin-options="{'items':1}">
+                                        <div>
                                             <div class="img-thumbnail">
-                                                <img src="<?php echo base_url() ?><?php echo $news->picture ?>" alt=""
-                                                    class="img-responsive" />
+                                                <img class="img-responsive"
+                                                    src="<?php echo base_url('assets/media/image/event/newevent1.jpg') ?>"
+                                                    alt="">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="post-content">
-                                            <h4><a
-                                                    href="<?php echo base_url('en/news/') ?><?php echo $news->slug_title ?>"><?php echo $news->title ?></a>
-                                            </h4>
-                                            <div class="post-meta">
-                                                <span class="label label-secondary">Berita</span>
-                                                <i class="fa fa-calendar"></i> <?php echo $news->tgl_posting ?>
-                                            </div>
-                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="">
+                                    <h2><?php echo $news->judul ?></h2>
+                                    <div class="post-meta">
+                                        <span><i class="fa fa-calendar"> <?php echo $news->tgl_posting ?></i></span>
+                                    </div>
+                                    <p style="text-align: justify;">
+                                     <?php echo $news->deskripsi ?>
+                                    </p>
+                                    <div class="post-block post-share">
+                                        <h3 class="heading-primary"><i class="fa fa-share"></i>Share this post</h3>
+                                        <!-- AddThis Button BEGIN -->
+                                        <div class="addthis_toolbox addthis_default_style ">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                            <a class="addthis_button_pinterest_pinit"></a>
+                                            <a class="addthis_counter addthis_pill_style"></a>
+                                        </div>
+                                        <script type="text/javascript"
+                                            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50faf75173aadc53">
+                                        </script>
+                                        <!-- AddThis Button END -->
+                                    </div>
+                                </div>
                             </article>
-
-
-                            <?php
-                            }
-                            ?>
-
-
-
-                            <ul class="pagination pagination-lg pull-right">
-                                <li class="disabled"><a href="#">First</a></li>
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="<?php echo base_url('news/news') ?>">1</a></li>
-                                <li class="disabled"><a href="#">&raquo;</a></li>
-                                <li class="disabled"><a href="#">Last</a></li>
-                            </ul>
-                            <span class="pull-left">Pages : 1 of 1</span>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -148,17 +140,19 @@
             </div>
         </div>
 
-        <!--Footer Start-->
-        <footer class="footer-copyright" id="footer" style="padding: 30px; font-size: 14px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-11">
-                        <span class='copyright'>Copyright &copy; 2019 <a href="#">PT Len Rekaprima Semesta</a>. All
-                            rights reserved.</span>
-                    </div>
+    </div>
+
+    <!--Footer Start-->
+    <footer class="footer-copyright" id="footer" style="padding: 30px; font-size: 14px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <span class='copyright'>Copyright &copy; 2019 <a href="#">PT Len Rekaprima Semesta</a>. All rights
+                        reserved.</span>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     <!-- Vendor -->
     <script src="<?php echo base_url('assets/vendor/jquery/jquery-3.3.1.js') ?>"></script>

@@ -88,9 +88,9 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-head">
-                                    <header>Tambah Data Client</header>
+                                    <header>Tambah Data news</header>
                                     <div class="tools">
-                                        <a href="<?= site_url("dashboard/client") ?>" class="btn btn-icon-toggle"><i
+                                        <a href="<?= site_url("dashboard/news") ?>" class="btn btn-icon-toggle"><i
                                                 class="md md-keyboard-arrow-left" title="Kembali"></i></a>
                                         <a class="btn btn-icon-toggle btn-refresh" title="Refresh"><i
                                                 class="md md-refresh"></i></a>
@@ -107,33 +107,39 @@
                                     'class' => 'form form-validate floating-label form-responsive', 
                                     'novalidate' => 'novalidate',
                                    
-                                    'id'=>'client'
+                                    'id'=>'news'
                                 );
-                                echo form_open_multipart('dashboard/client/tambah', $attributes);
+                                echo form_open_multipart('dashboard/news/tambah', $attributes);
                                  ?>
 
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nama_client"
-                                                    name="nama_client" data-rule-minlength="2" maxlength="30" required>
-                                                <label for="nama_client">Nama Client</label>
+                                                <input type="text" class="form-control" id="judul"
+                                                    name="judul" data-rule-minlength="2" maxlength="30" required>
+                                                <label for="judul">Judul news</label>
+                                                <p class="help-block">Minimum length 2 / Maximum length 30</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="title"
+                                                    name="title" data-rule-minlength="2" maxlength="30" required>
+                                                <label for="title">Judul news English</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <input type="url" class="form-control" id="link_client"
-                                                    name="link_client" data-rule-minlength="2" maxlength="30" required>
-                                                <label for="link_client">Link Clinet</label>
+                                                <input type="url" class="form-control" id="link_news"
+                                                    name="link_news" data-rule-minlength="2" maxlength="30" required>
+                                                <label for="link_news">Deskripsi</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
                                             <div class="form-group">
                                                 <br>
-                                                <input type="file" class="form-control" id="icon_client"
-                                                    name="icon_client" accept="image/*" required>
-                                                <label for="icon_client">Icon Client</label>
+                                                <input type="file" class="form-control" id="icon_news"
+                                                    name="icon_news" accept="image/*" required>
+                                                <label for="icon_news">Icon news</label>
                                             </div>
 
                                         </div>

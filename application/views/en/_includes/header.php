@@ -2,6 +2,7 @@
 $uri = $this->uri->segment(1);
 $link = $this->uri->segment(2);
 $konten = $this->uri->segment(3);
+// echo $konten = $this->uri->segment(2);
 
 switch ($link) {
     case 'who_we_are':
@@ -31,6 +32,10 @@ switch ($link) {
     case 'contact':
         $link = "id/kontak";
         break;
+    case 'news':
+        $link = "id/berita";
+        break;
+   
     
     default:
         $link = "id/beranda";
@@ -43,10 +48,13 @@ $CI->load->model('kategorimaintenancesmodel');
 $CI->load->model('maintenancesmodel');
 $CI->load->model('kategoriprojectsmodel');
 $CI->load->model('projectsmodel');
+$CI->load->model('newsmodel');
+
 $result = $CI->kategorimaintenancesmodel->getAll();
 $maintenances = $CI->maintenancesmodel->getAll();
 $kategoriprojects = $CI->kategoriprojectsmodel->getAll();
 $projects = $CI->projectsmodel->getAll();
+$datanews = $CI->newsmodel->getAll();
 
 foreach ($result->result() as $link_kategori) {
     if ($link_kategori->link_kategori_maintenance_en == $konten) {
@@ -66,6 +74,14 @@ foreach ($maintenances->result() as $maintenance) {
 foreach ($projects->result() as $project) {
     if ($project->link_project_en == $konten) {
         $link="id/projek/".$project->link_project;
+    }
+}
+
+
+// Ini Perulangan News
+foreach ($datanews->result() as $news) {
+    if ($news->slug_title == $konten) {
+        $link="id/berita/".$news->slug_judul;
     }
 }
 

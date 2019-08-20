@@ -46,6 +46,13 @@ $route['dashboard/client/hapus'] = 'client/hapus';
 // END CLIENTS
 
 
+// News
+$route['dashboard/news'] = 'news';
+$route['dashboard/news/tambah'] = 'news/tambah';
+$route['dashboard/news/edit/(:any)'] = 'news/edit';
+$route['dashboard/news/update'] = 'news/update';
+$route['dashboard/news/hapus'] = 'news/hapus';
+// End News
 // Akhir Backend
 
 
@@ -56,9 +63,13 @@ $route['id/kategori'] = 'id/beranda'; //id/beranda, overview
 $route['id/kategori/(:any)'] = 'id/kategorimaintenance'; //id/beranda, overview
 $route['id/maintenance/(:any)'] = 'id/detail_maintenance'; 
 $route['id/projek/(:any)'] = 'id/projek'; 
+$route['id/berita'] = 'id/news'; 
+$route['id/berita/(:any)'] = 'id/single_news'; 
 
 
-$route['id/category'] = 'en/home'; //id/beranda, overview
+$route['en/category'] = 'en/home'; //id/beranda, overview
 $route['en/category/(:any)'] = 'en/categorymaintenance'; //id/beranda, overview
 $route['en/maintenance/(:any)'] = 'en/detail_maintenance'; 
 $route['en/project/(:any)'] = 'en/project'; 
+$route['en/news'] = 'en/news'; 
+$route['en/news/(:any)'] = 'en/single_news'; 

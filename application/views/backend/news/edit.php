@@ -4,7 +4,7 @@
 
 
 <head>
-    <title>Material Admin - Dynamic tables</title>
+    <title>Material slider - Dynamic tables</title>
 
     <!-- BEGIN META -->
     <meta charset="utf-8">
@@ -19,24 +19,23 @@
 
     <link type="text/css" rel="stylesheet"
         href="<?= base_url() ?>assets/backend/css/jquery.dataTables.css?1422823365" />
-    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialadmin/css/theme-default/libs/DataTables/jquery.dataTables.css?1422823365" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialslider/css/theme-default/libs/DataTables/jquery.dataTables.css?1422823365" /> -->
 
-    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialadmin/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1422823421" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialslider/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1422823421" /> -->
     <link type="text/css" rel="stylesheet"
         href="<?= base_url() ?>assets/backend/css/dataTables.colVis.css?1422823421" />
 
-    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialadmin/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1422823422" /> -->
+    <!-- <link type="text/css" rel="stylesheet" href="http://www.codecovers.eu/assets/css/modules/materialslider/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1422823422" /> -->
     <link type="text/css" rel="stylesheet"
         href="<?= base_url() ?>assets/backend/css/dataTables.tableTools.css?1422823422" />
 
     <!-- END STYLESHEETS -->
-    <link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/backend/css/dropzone-theme.css?1422823366" />
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-	<script type="text/javascript" src="http://www.codecovers.eu/assets/backend/js/modules/materialadmin/libs/utils/html5shiv.js?1422823601"></script>
-	<script type="text/javascript" src="http://www.codecovers.eu/assets/backend/js/modules/materialadmin/libs/utils/respond.min.js?1422823601"></script>
+	<script type="text/javascript" src="http://www.codecovers.eu/assets/backend/js/modules/materialslider/libs/utils/html5shiv.js?1422823601"></script>
+	<script type="text/javascript" src="http://www.codecovers.eu/assets/backend/js/modules/materialslider/libs/utils/respond.min.js?1422823601"></script>
     <![endif]-->
 </head>
 
@@ -62,11 +61,10 @@
         <!-- BEGIN CONTENT-->
         <div id="content">
             <section>
-                <div class="section-body">
-
+                <div class="section-body ">
                     <!-- Pesan Error -->
                     <?php
-                    if (validation_errors() == true) {
+                    if ($this->session->flashdata('errors') == true){
                     ?>
                     <div class="alert alert-danger" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -74,7 +72,7 @@
                         </button>
                         <strong>Error!</strong>
                         <p>
-                            <?php echo validation_errors('<li>','</li>'); ?>
+                            <?php echo $this->session->flashdata('errors'); ?>
 
                         </p>
                     </div>
@@ -82,13 +80,12 @@
                     <?php 
                     }
                     ?>
-
                     <div class="row">
-                        <!-- BEGIN FROM ADMIN -->
+                        <!-- BEGIN FROM slider -->
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-head">
-                                    <header>Tambah Data Client</header>
+                                    <header>Edit Data Clinet</header>
                                     <div class="tools">
                                         <a href="<?= site_url("dashboard/client") ?>" class="btn btn-icon-toggle"><i
                                                 class="md md-keyboard-arrow-left" title="Kembali"></i></a>
@@ -106,50 +103,61 @@
                                 $attributes = array(
                                     'class' => 'form form-validate floating-label form-responsive', 
                                     'novalidate' => 'novalidate',
-                                   
-                                    'id'=>'client'
+                                    'id'=>'EditClient'
                                 );
-                                echo form_open_multipart('dashboard/client/tambah', $attributes);
+                                echo form_open_multipart('dashboard/client/update', $attributes);
                                  ?>
-
+                                        <!-- <div class="card"> -->
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nama_client"
-                                                    name="nama_client" data-rule-minlength="2" maxlength="30" required>
+                                                <input type="hidden" name="id_client" value="<?= $client->id_client ?>">
+                                                <input type="text" class="form-control" id="nama_client" name="nama_client"
+                                                    value="<?= $client->nama_client ?>" data-rule-minlength="2" maxlength="30"
+                                                    required>
                                                 <label for="nama_client">Nama Client</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <input type="url" class="form-control" id="link_client"
-                                                    name="link_client" data-rule-minlength="2" maxlength="30" required>
-                                                <label for="link_client">Link Clinet</label>
+                                                <input type="url" class="form-control" id="link_client" name="link_client"
+                                                    value="<?= $client->link_client ?>" data-rule-minlength="2" maxlength="30"
+                                                    required>
+                                                <label for="link_client">Link Client</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
-
+                                           
                                             <div class="form-group">
                                                 <br>
-                                                <input type="file" class="form-control" id="icon_client"
-                                                    name="icon_client" accept="image/*" required>
+                                                <input type="file" class="form-control" id="icon_client" name="icon_client"
+                                                    accept="image/*" >
                                                 <label for="icon_client">Icon Client</label>
                                             </div>
+                                            
+                                            <div class="form-group">
 
-                                        </div>
-                                        <div class="card-actionbar">
-                                            <div class="card-actionbar-row">
+                                                <input type="hidden" class="form-control"
+                                                    value="<?= $client->icon_client ?>" name="icon_lama_client">
+                                                <label for="foto_client">Icon Client</label>
 
+                                                <img src="<?= base_url() ?><?= $client->icon_client ?>" width="200px"
+                                                    alt="" class="img-responsive">
 
-                                                <button class="btn ink-reaction btn-raised btn-success" type="submit">
-                                                    <i class="fa fa-save"></i> Simpan
-                                                </button>
                                             </div>
                                         </div>
+                                        <!--end .card-body -->
+                                        <div class="card-actionbar">
+                                            <div class="card-actionbar-row">
+                                                <button type="submit" class="btn ink-reaction btn-raised btn-success">
+                                                    <i class="fa fa-save"></i>
+                                                    Perbarui</button>
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                                        <!--end .card -->
 
                                         </form>
-                                        <!--end .card-body -->
-
 
                                     </div>
                                 </div>
@@ -159,7 +167,7 @@
                             <!--end .card -->
                         </div>
                         <!--end .col -->
-                        <!-- END FROM ADMIN -->
+                        <!-- END FROM slider -->
                     </div>
                     <!--end .row -->
                 </div>
@@ -179,8 +187,8 @@
                     </a>
                 </div>
                 <div class="expanded">
-                    <a href="http://www.codecovers.eu/materialadmin/dashboards/dashboard">
-                        <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+                    <a href="http://www.codecovers.eu/materialslider/dashboards/dashboard">
+                        <span class="text-lg text-bold text-primary ">MATERIAL&nbsp;slider</span>
                     </a>
                 </div>
             </div>
@@ -220,7 +228,6 @@
     <script src="<?= base_url() ?>assets/backend/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>assets/backend/js/dataTables.colVis.min.js"></script>
     <script src="<?= base_url() ?>assets/backend/js/dataTables.tableTools.min.js"></script>
-    <script src="<?= base_url() ?>assets/backend/js/dropzone.min.js"></script>
 
 
     <!-- END JAVASCRIPT -->
