@@ -86,8 +86,9 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Judul news</th>
-                                                        <th>Link news</th>
-                                                        <th>Icon news</th>
+                                                        <th>Tgl Posting</th>
+                                                        <th>Penulis</th>
+                                                        <th>Gambar</th>
                                                         <!-- <th class="sort-numeric">Engine version</th> -->
                                                         <!-- <th class="sort-alpha">CSS grade</th> -->
                                                         <th>Aksi</th>
@@ -100,15 +101,16 @@
                                     ?>
                                                     <tr class="gradeX">
                                                         <td><?= $news->judul ?></td>
-                                                        <td><?= $news->link_news ?></td>
+                                                        <td><?= $news->tgl_posting ?></td>
+                                                        <td><?= $news->nama_admin ?></td>
                                                       
                                                         <td>
 
 
 
-                                                            <a href="<?= base_url() ?><?= $news->icon_news ?>"
-                                                                data-lightbox="<?= $news->icon_news ?>"
-                                                                data-title="<?= $news->nama_news ?>">
+                                                            <a href="<?= base_url() ?><?= $news->gambar ?>"
+                                                                data-lightbox="<?= $news->gambar ?>"
+                                                                data-title="<?= $news->judul ?>">
                                                                 Lihat Foto
                                                             </a>
 

@@ -13,6 +13,13 @@ class newsmodel extends CI_Model {
         return $this->db->get($this->_table);
     }
 
+
+    public function getAllJoin()
+    {
+        $this->db->join('admins','news.id_admin=admins.id_admin','left');
+        return $this->db->get($this->_table);
+    }
+
     public function getById($id)
     {
         return $this->db->get_where($this->_table,['id_news'=>$id]);

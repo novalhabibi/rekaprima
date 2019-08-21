@@ -14,7 +14,11 @@ class News extends CI_Controller {
     }
 
     public function index() {
-        $data['newss']=$this->newsmodel->getAll();
+        
+        $data['newss']=$this->newsmodel->getAllJoin();
+        // print_r($data['newss']);
+        // die();
+        // $data['newss']=$this->newsmodel->getAll();
         $this->load->view('backend/news/index',$data);
     }
 
