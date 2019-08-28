@@ -30,7 +30,9 @@
         href="<?= base_url() ?>assets/backend/css/dataTables.tableTools.css?1422823422" />
 
     <!-- END STYLESHEETS -->
-
+    <!-- Summer CK editor -->
+    <link type="text/css" rel="stylesheet"
+        href="<?= base_url() ?>assets/backend/css/summernote.css?1422823374" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -105,52 +107,64 @@
                                     'novalidate' => 'novalidate',
                                     'id'=>'EditClient'
                                 );
-                                echo form_open_multipart('dashboard/client/update', $attributes);
+                                echo form_open_multipart('dashboard/news/update', $attributes);
                                  ?>
                                         <!-- <div class="card"> -->
                                         <div class="card-body">
+                                          <input type="hidden" name="id_news" value="<?= $news->id_news ?>"  required>
                                             <div class="form-group">
-                                                <input type="hidden" name="id_client" value="<?= $client->id_client ?>">
-                                                <input type="text" class="form-control" id="nama_client" name="nama_client"
-                                                    value="<?= $client->nama_client ?>" data-rule-minlength="2" maxlength="30"
-                                                    required>
-                                                <label for="nama_client">Nama Client</label>
+                                                <input type="text" class="form-control" id="judul" name="judul"
+                                                    data-rule-minlength="2"  value="<?= $news->judul ?>"  maxlength="30" required>
+                                                <label for="judul">Judul news</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <input type="url" class="form-control" id="link_client" name="link_client"
-                                                    value="<?= $client->link_client ?>" data-rule-minlength="2" maxlength="30"
-                                                    required>
-                                                <label for="link_client">Link Client</label>
+                                             <div class="form-group">
+                                                <input type="text" class="form-control" id="title" name="title"
+                                                    data-rule-minlength="2" maxlength="30" value="<?= $news->title ?>" required>
+                                                <label for="title">Judul news English</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
-
                                            
+                                             <div class="form-group">
+                                                <textarea id="summernote" name="deskripsi">
+                                                <br/>
+                                                
+                                                  <?= $news->deskripsi ?>
+                                                </textarea>
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <p class="help-block">Minimum length 2 / Maximum length 30</p>
+                                            </div>
                                             <div class="form-group">
-                                                <br>
-                                                <input type="file" class="form-control" id="icon_client" name="icon_client"
-                                                    accept="image/*" >
-                                                <label for="icon_client">Icon Client</label>
+                                                <textarea id="summernote-en" name="description">
+                                                <br/>
+                                                
+                                                   <?= $news->description ?>
+                                                </textarea>
+                                                <label for="deskripsi">Description for english</label>
+                                                <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
                                             
                                             <div class="form-group">
 
                                                 <input type="hidden" class="form-control"
-                                                    value="<?= $client->icon_client ?>" name="icon_lama_client">
-                                                <label for="foto_client">Icon Client</label>
+                                                    value="<?= $news->gambar ?>" name="gambar_lama_news">
+                                                <label for="gambar">Gambar News</label>
 
-                                                <img src="<?= base_url() ?><?= $client->icon_client ?>" width="200px"
+                                                <img src="<?= base_url() ?><?= $news->gambar ?>" width="200px"
                                                     alt="" class="img-responsive">
-
+                                                     <br>
+                                                <input type="file" class="form-control" id="gambar" name="gambar"
+                                                    accept="image/*">
+                                                <p class="help-block">Biarkan kosong jika tidak ada perubahan</p>
                                             </div>
                                         </div>
                                         <!--end .card-body -->
                                         <div class="card-actionbar">
                                             <div class="card-actionbar-row">
                                                 <button type="submit" class="btn ink-reaction btn-raised btn-success">
-                                                    <i class="fa fa-save"></i>
+                                                    <i class="fa fa-refresh"></i>
                                                     Perbarui</button>
                                             </div>
                                         </div>
@@ -228,6 +242,14 @@
     <script src="<?= base_url() ?>assets/backend/js/jquery.dataTables.min.js"></script>
     <script src="<?= base_url() ?>assets/backend/js/dataTables.colVis.min.js"></script>
     <script src="<?= base_url() ?>assets/backend/js/dataTables.tableTools.min.js"></script>
+
+    
+    <!-- CK editor -->
+    <script src="<?= base_url() ?>assets/backend/js/ckeditor.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/adapters/jquery.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/summernote.min.js"></script>
+    <script src="<?= base_url() ?>assets/backend/js/DemoFormEditors.js"></script>
+
 
 
     <!-- END JAVASCRIPT -->

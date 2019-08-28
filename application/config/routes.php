@@ -64,7 +64,9 @@ $route['id/kategori/(:any)'] = 'id/kategorimaintenance'; //id/beranda, overview
 $route['id/maintenance/(:any)'] = 'id/detail_maintenance'; 
 $route['id/projek/(:any)'] = 'id/projek'; 
 $route['id/berita'] = 'id/news'; 
-$route['id/berita/(:any)'] = 'id/single_news'; 
+$route['id/berita/detail/(:any)'] = 'id/single_news'; 
+$route['id/berita/page/(:any)'] = 'id/news'; 
+$route['id/berita/page'] = 'id/news'; 
 
 
 $route['en/category'] = 'en/home'; //id/beranda, overview
@@ -72,4 +74,6 @@ $route['en/category/(:any)'] = 'en/categorymaintenance'; //id/beranda, overview
 $route['en/maintenance/(:any)'] = 'en/detail_maintenance'; 
 $route['en/project/(:any)'] = 'en/project'; 
 $route['en/news'] = 'en/news'; 
-$route['en/news/(:any)'] = 'en/single_news'; 
+$route['en/news/detail/(:any)'] = 'en/single_news'; 
+$route['en/news/page/(:any)'] = 'en/news'; 
+$route['en/news/page'] = 'en/news'; 

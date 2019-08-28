@@ -31,6 +31,8 @@
 
     <!-- END STYLESHEETS -->
     <link type="text/css" rel="stylesheet" href="<?= base_url() ?>assets/backend/css/dropzone-theme.css?1422823366" />
+
+    <!-- Summer CK editor -->
     <link type="text/css" rel="stylesheet"
         href="<?= base_url() ?>assets/backend/css/summernote.css?1422823374" />
 
@@ -130,49 +132,19 @@
 
 
                                             <div class="form-group">
-                                                <textarea id="summernote">
+                                                <textarea id="summernote" name="deskripsi">
                                                 <br/>
                                                 
-                                                    <ul>
-                                                        <li>Changing block type</li>
-                                                        <li>Text formatting (bold, italic, strikethrough, underline)</li>
-                                                        <li>Setting text color</li>
-                                                        <li>Text aligning</li>
-                                                        <li>Inserting links</li>
-                                                        <li>Inserting pictures</li>
-                                                        <li>Creating a list (bulled or numbered)</li>
-                                                    </ul>
-                                                    <p><b>Options:</b></p>
-                                                    <ul>
-                                                        <li>Translations</li>
-                                                        <li>Using your own color palette</li>
-                                                        <li>Disabling/enabling tooltips</li>
-                                                    </ul>
-                                                </p>
+                                                  <p>Silahkan isi berita disini</p>
                                                 </textarea>
                                                 <label for="deskripsi">Deskripsi</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
                                             </div>
                                             <div class="form-group">
-                                                <textarea id="simple-summernote">
+                                                <textarea id="summernote-en" name="description">
                                                 <br/>
                                                 
-                                                    <ul>
-                                                        <li>Changing block type</li>
-                                                        <li>Text formatting (bold, italic, strikethrough, underline)</li>
-                                                        <li>Setting text color</li>
-                                                        <li>Text aligning</li>
-                                                        <li>Inserting links</li>
-                                                        <li>Inserting pictures</li>
-                                                        <li>Creating a list (bulled or numbered)</li>
-                                                    </ul>
-                                                    <p><b>Options:</b></p>
-                                                    <ul>
-                                                        <li>Translations</li>
-                                                        <li>Using your own color palette</li>
-                                                        <li>Disabling/enabling tooltips</li>
-                                                    </ul>
-                                                </p>
+                                                   <p>Silahkan isi berita disini dalam bahsa inggris</p>
                                                 </textarea>
                                                 <label for="deskripsi">Description for english</label>
                                                 <p class="help-block">Minimum length 2 / Maximum length 30</p>
@@ -181,9 +153,9 @@
 
                                             <div class="form-group">
                                                 <br>
-                                                <input type="file" class="form-control" id="icon_news" name="icon_news"
+                                                <input type="file" class="form-control" id="icon_news" name="gambar"
                                                     accept="image/*" required>
-                                                <label for="icon_news">Icon news</label>
+                                                <label for="icon_news">Gambar news</label>
                                             </div>
 
                                         </div>

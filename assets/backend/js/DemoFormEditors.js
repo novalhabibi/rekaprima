@@ -32,6 +32,7 @@
 
 		// Full toolbar
 		$('#summernote').summernote();
+		$('#summernote-en').summernote();
 		
 		// Simple toolbar
 		$('#simple-summernote').summernote({

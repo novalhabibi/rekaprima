@@ -125,14 +125,11 @@
 
 
 
-                            <ul class="pagination pagination-lg pull-right">
-                                <li class="disabled"><a href="#">First</a></li>
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="<?php echo base_url('news/news') ?>">1</a></li>
-                                <li class="disabled"><a href="#">&raquo;</a></li>
-                                <li class="disabled"><a href="#">Last</a></li>
-                            </ul>
-                            <span class="pull-left">Pages : 1 of 1</span>
+                           
+                            <?php 
+	// echo $this->pagination->create_links();
+	echo $pagination;
+	?>
                         </div>
                     </div>
                     <div class="col-md-3">
