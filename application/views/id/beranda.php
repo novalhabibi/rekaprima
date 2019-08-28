@@ -311,75 +311,9 @@
             <br />
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading heading-border heading-middle-border heading-middle-border-center">
-                            <h2>BERITA <strong>TERBARU</strong></h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="owl-carousel owl-theme"
-                                    data-plugin-options="{'items': 1, 'margin': 10, 'autoplay':true}">
-                                    <div class="box-item">
-                                        <div class="box-post">
-                                            <h1 class="post-title">
-                                                <a
-                                                    href="<?php echo base_url('id/news_2019_sinergi_industri_dan_pendidikan') ?>">
-                                                    Sinergi Industri dan Pendidikan
-                                                </a>
-                                            </h1>
-                                            <span class="meta">
-                                                <span class="label label-secondary">Berita Terbaru</span>
-                                                <span><i class="fa fa-calendar"></i> 2019-04-30 10:00:00</span>
-                                            </span>
-                                        </div>
-                                        <img src="<?php echo base_url('assets/media/image/event/newevent6.jpg') ?>"
-                                            alt="Sinergi Industri dan Pendidikan" class="img-responsive">
-                                    </div>
-                                    <div class="box-item">
-                                        <div class="box-post">
-                                            <h1 class="post-title">
-                                                <a
-                                                    href="<?php echo base_url('id/news_2019_sinergi_industri_dan_pendidikan') ?>">
-                                                    Sinergi Industri dan Pendidikan
-                                                </a>
-                                            </h1>
-                                            <span class="meta">
-                                                <span class="label label-secondary">Berita Terbaru</span>
-                                                <span><i class="fa fa-calendar"></i> 2019-04-30 10:00:00</span>
-                                            </span>
-                                        </div>
-                                        <img src="<?php echo base_url('assets/media/image/event/newevent6.jpg') ?>"
-                                            alt="Sinergi Industri dan Pendidikan" class="img-responsive">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <ul class="simple-post-list">
-                                    <li>
-                                        <div class="post-image">
-                                            <div class="img-thumbnail">
-                                                <a
-                                                    href="<?php echo base_url('news/news_2019_indonesia_railway_conference') ?>">
-                                                    <img src="<?php echo base_url('assets/media/image/event/newevent1.jpg') ?>"
-                                                        alt="Indonesia Railway Conference 2019"
-                                                        style="width:92px; height:76px;">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="post-info">
-                                            <a
-                                                href="<?php echo base_url('news/news_2019_indonesia_railway_conference') ?>">Indonesia
-                                                Railway Conference 2019</a>
-                                            <div class="post-meta">
-                                                <span class="label label-secondary">Berita</span>
-                                                <i class="fa fa-calendar"></i> 2019-03-20 10:30:00
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Berita -->
+                    <?php $this->load->view('id/_includes/berita.php'); ?>
+                    <!-- End Berita -->
                 </div>
             </div>
             <br />

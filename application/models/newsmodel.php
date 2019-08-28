@@ -103,6 +103,7 @@ class newsmodel extends CI_Model {
     }
 
     function get_mahasiswa_list($limit, $start){
+        $this->db->order_by("tgl_posting", "desc");
 		$query = $this->db->get('news', $limit, $start);
         return $query;
 	}
