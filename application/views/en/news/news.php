@@ -106,7 +106,7 @@
                                     <div class="col-md-7">
                                         <div class="post-content">
                                             <h4><a
-                                                    href="<?php echo base_url('en/news/') ?><?php echo $news->slug_title ?>"><?php echo $news->title ?></a>
+                                                    href="<?php echo base_url('en/news/detail/') ?><?php echo $news->slug_title ?>"><?php echo $news->title ?></a>
                                             </h4>
                                             <div class="post-meta">
                                                 <span class="label label-secondary">Berita</span>

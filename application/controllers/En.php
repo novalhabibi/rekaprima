@@ -109,7 +109,7 @@ class En extends CI_Controller {
 
 
     public function single_news() {
-        $slug = $this->uri->segment(3);
+        $slug = $this->uri->segment(4);
         $data['news'] = $this->newsmodel->getBySlugTitle($slug)->row();
         // print_r($data['news']);
         // die();
