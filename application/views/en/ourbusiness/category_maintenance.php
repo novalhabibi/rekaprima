@@ -113,7 +113,7 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                                     
                                     ?>
                                     <li><a data-hash="" data-hash-offset="110"
-                                            href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?> "><?= $maintenancekategori->name_maintenance_en ?></a>
+                                            href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?>"><?= $maintenancekategori->name_maintenance_en ?></a>
                                     </li>
                                     <?php
                                       # code...
@@ -129,68 +129,30 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                             <div class="col-lg-12 col-md-12" style="height: 200px;">
                                 <h3><?= $result->name_kategori_maintenance_en ?></h3>
                                 <p style="text-align: justify;"><?= $result->description_kategori_maintenance_en ?></p>
-                                <a href="<?php echo base_url('en/len_signalling_systems') ?>"
-                                    class="btn btn-primary btn-block"
-                                    style="border-color: #0068a5 #0068a5 #035381">Details</a>
+                                
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="row">
+                                    <?php
+                                    foreach ($maintenancewherecategory as $maintenancekategori) {
+                                      
+                                    
+                                    ?>
                                     <div class="col-md-4" style="height: 500px;">
                                         <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_ctc.jpg') ?>"
+                                                src="<?php echo $maintenancekategori->image_maintenance_en ?>"
                                                 class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN CTC</h3>
-                                        <p style="text-align: justify;">Len Centralized Traffic Control (CTC) is an
-                                            integrated system for controlling and supervising signaling systems and or
-                                            types of equipment at stations from the central station.</p>
-                                        <a href="<?php echo base_url('en/len_ctc') ?>" class="btn btn-primary btn-block"
+                                        <h3><?php echo $maintenancekategori->name_maintenance_en ?></h3>
+                                        <p style="text-align: justify;"><?php echo $maintenancekategori->description_maintenance_en ?></p>
+                                        <a href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?> " class="btn btn-primary btn-block"
                                             style="border-color: #0068a5 #0068a5 #035381">Details</a>
                                     </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_local_interface.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN LOCAL INTERFACE</h3>
-                                        <p style="text-align: justify;">Len Local Interface is an operator interface
-                                            that can connect to various interlocking systems.</p>
-                                        <a href="<?php echo base_url('en/len_local_interface') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_axle_counter.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>Axle Counter Len - Altpro</h3>
-                                        <p style="text-align: justify;">Axle Counter is a device on a train that detects
-                                            trains passing instead of track circuits. Counting heads (or 'detection
-                                            points') are installed at each end of the section.</p>
-                                        <a href="<?php echo base_url('en/len_axle_counter') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_led_signal.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN LED SIGNAL</h3>
-                                        <p style="text-align: justify;">Signal LEDs are signaling systems that give
-                                            commands to machinists based on the color of the active light at a time.</p>
-                                        <a href="<?php echo base_url('en/len_led_signal') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_mdp.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN MDP</h3>
-                                        <p style="text-align: justify;">Signaling systems need to be supported by an
-                                            optimal power supply, one of which is the distribution panel signaling, or
-                                            Main Distribution Panel (MDP).</p>
-                                        <a href="<?php echo base_url('en/len_mdp') ?>" class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
+                                    <?php
+                                      # code...
+                                    }
+                                    
+                                    ?>
+                                    
                                 </div>
                             </div>
                         </div>

@@ -135,71 +135,31 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                                 <p style="text-align: justify;">Signalling Systems adalah sistem yang digunakan untuk
                                     mengarahkan lalu lintas kereta api. Kereta bergerak di rel tetap, membuatnya secara
                                     unik rentan terhadap tabrakan.</p>
-                                <a href="<?php echo base_url('overview/detailsignaling') ?>"
-                                    class="btn btn-primary btn-block"
-                                    style="border-color: #0068a5 #0068a5 #035381">Details</a>
+
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="row">
+                                    <?php
+                                    foreach ($maintenancewherecategory as $maintenancekategori) {
+                                      
+                                    
+                                    ?>
                                     <div class="col-md-4" style="height: 500px;">
                                         <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_ctc.jpg') ?>"
+                                                src="<?= $maintenancekategori->gambar_maintenance ?>"
                                                 class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN CTC</h3>
-                                        <p style="text-align: justify;">Len Centralized Traffic Control (CTC) adalah
-                                            sistem terintegrasi untuk mengendalikan dan mengawasi sistem persinyalan dan
-                                            atau jenis peralatan di stasiun dari stasiun pusat.</p>
-                                        <a href="<?php echo base_url('overview/detailsignaling1') ?>"
+                                        <h3><?= $maintenancekategori->nama_maintenance ?></h3>
+                                        <p style="text-align: justify;"><?= $maintenancekategori->deskripsi_maintenance ?></p>
+                                        <a href="<?php echo base_url('id/maintenance/') ?><?= $maintenancekategori->link_maintenance ?> "
                                             class="btn btn-primary btn-block"
                                             style="border-color: #0068a5 #0068a5 #035381">Details</a>
                                     </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_local_interface.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN LOCAL INTERFACE</h3>
-                                        <p style="text-align: justify;">Len Local Interface adalah operator antarmuka
-                                            yang dapat terhubung ke berbagai sistem yang saling mengunci.</p>
-                                        <a href="<?php echo base_url('overview/detailsignaling2') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_axle_counter.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>Axle Counter Len - Altpro</h3>
-                                        <p style="text-align: justify;">Axle Counter adalah perangkat di kereta yang
-                                            mendeteksi kereta yang lewat alih-alih sirkuit trek Counting head (atau
-                                            'titik deteksi') dipasang di setiap ujung bagian.</p>
-                                        <a href="<?php echo base_url('overview/detailsignaling3') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_led_signal.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN LED SIGNAL</h3>
-                                        <p style="text-align: justify;">LED Signal adalah sistem pensinyalan yang
-                                            memberi perintah kepada masinis berdasarkan warna cahaya yang aktif pada
-                                            suatu waktu.</p>
-                                        <a href="<?php echo base_url('overview/detailsignaling4') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
-                                    <div class="col-md-4" style="height: 500px;">
-                                        <div class="thumb-info custom-thumb-info-4"><img
-                                                src="<?php echo base_url('assets/media/image/len_mdp.jpg') ?>"
-                                                class="img-responsive" caption="false" width="369" height="184"></div>
-                                        <h3>LEN MDP</h3>
-                                        <p style="text-align: justify;">Sistem persinyalan perlu didukung oleh catu daya
-                                            yang optimal, salah satunya adalah persinyalan panel distribusi, atau Main
-                                            Distribution Panel (MDP).</p>
-                                        <a href="<?php echo base_url('overview/detailsignaling5') ?>"
-                                            class="btn btn-primary btn-block"
-                                            style="border-color: #0068a5 #0068a5 #035381">Details</a>
-                                    </div>
+                                    <?php
+                                      # code...
+                                    }
+                                    
+                                    ?>
+
                                 </div>
                             </div>
                         </div>
