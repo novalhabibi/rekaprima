@@ -22,7 +22,7 @@ $maintenances =$CI->maintenancesmodel->get_maintenance_list(3,0);
             </div>
             <div class="thumb-info-caption custom-box-shadow" style="border-bottom : 1px solid #0e85ca;">
                 <div class="thumb-info-caption-text">
-                    <h4 class="text-center"><a href="<?php echo base_url('id/maintenance/') ?><?php echo $maintenance->link_maintenance_en ?>" class="text-color-dark"> <?php echo $maintenance->name_maintenance_en ?></a></h4>
+                    <h4 class="text-center"><a href="<?php echo base_url('en/maintenance/') ?><?php echo $maintenance->link_maintenance_en ?>" class="text-color-dark"> <?php echo $maintenance->name_maintenance_en ?></a></h4>
                     <p class="justify"> <?php echo $maintenance->description_maintenance_en ?></p>
                 </div>
             </div>
