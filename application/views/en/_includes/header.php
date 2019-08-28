@@ -2,6 +2,7 @@
 $uri = $this->uri->segment(1);
 $link = $this->uri->segment(2);
 $konten = $this->uri->segment(3);
+$detail = $this->uri->segment(4);
 // echo $konten = $this->uri->segment(2);
 
 switch ($link) {
@@ -35,7 +36,6 @@ switch ($link) {
     case 'news':
         $link = "id/berita";
         break;
-   
     
     default:
         $link = "id/beranda";
@@ -80,10 +80,13 @@ foreach ($projects->result() as $project) {
 
 // Ini Perulangan News
 foreach ($datanews->result() as $news) {
-    if ($news->slug_title == $konten) {
-        $link="id/berita/".$news->slug_judul;
+    if ($news->slug_title == $detail) {
+        $link="id/berita/detail/".$news->slug_judul;
     }
 }
+
+
+
 
 ?>
 

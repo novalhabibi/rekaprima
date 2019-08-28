@@ -1,8 +1,9 @@
 <?php
 $uri = $this->uri->segment(1);
-
 $link = $this->uri->segment(2);
 $konten = $this->uri->segment(3);
+$detail = $this->uri->segment(4);
+
 switch ($link) {
     case 'siapa_kami':
         $link = "en/who_we_are";
@@ -83,8 +84,8 @@ foreach ($projects->result() as $project) {
 
 // Ini Perulangan News
 foreach ($datanews->result() as $news) {
-    if ($news->slug_judul == $konten) {
-        $link="en/news/".$news->slug_title;
+    if ($news->slug_judul == $detail) {
+        $link="en/news/detail/".$news->slug_title;
     }
 }
 ?>
