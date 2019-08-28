@@ -249,64 +249,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-md mb-xl">
-                    <div class="col-md-4">
-                        <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter" data-from="0.5"
-                            data-to="0" data-opacity="0" data-translatex="-200">
-                            <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/Soetta-LRS.jpg') ?>"
-                                    class="img-responsive" /></div>
-                            <div class="thumb-info-caption custom-box-shadow"
-                                style="border-bottom : 1px solid #0e85ca;">
-                                <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="#" class="text-color-dark"> Skytrain</a></h4>
-                                    <p class="justify">Skytrain Bandara Soekarno Hatta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-from="0.5" data-to="0"
-                            data-crop="false" data-opacity="0" data-translatey="200">
-                            <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/N.jpg') ?>"
-                                    class="img-responsive" /></div>
-                            <div class="thumb-info-caption custom-box-shadow"
-                                style="border-bottom : 1px solid #0e85ca;">
-                                <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="#" class="text-color-dark"> Interlocking System
-                                        </a></h4>
-                                    <p class="justify">Len Interlocking System (SIL) is a product of PLC based
-                                        Interlocking system developed by PT Len Industri.SIL is used as Interlocking
-                                        Processor to control outdoor equipment operation such as light signal, track
-                                        circuit, point machine, etc. SIL is developed as an alternative solution for
-                                        railway interlocking system especially for Indonesian railway. SIL operation
-                                        stresses the importance of safety, reliability, availability as well as easy
-                                        maintenance.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumb-info custom-thumb-info-4 animateme scrollme" data-when="enter" data-from="0.5"
-                            data-to="0" data-opacity="0" data-translatex="200">
-                            <div class="thumb-info-wrapper"><img
-                                    src="<?php echo base_url('assets/media/image/slider/CBI-3.jpg') ?>"
-                                    class="img-responsive" /></div>
-                            <div class="thumb-info-caption custom-box-shadow"
-                                style="border-bottom : 1px solid #0e85ca;">
-                                <div class="thumb-info-caption-text">
-                                    <h4 class="text-center"><a href="" class="text-color-dark"> Computer Base
-                                            Interlocking </a></h4>
-                                    <p class="justify">Len Computer Base Interlocking System (CBI) is a product
-                                        developed by PT Len Industri (Persero). CBI is used as Interlocking System to
-                                        control outdoor equipment operation such as light signal, track circuit, point
-                                        machine, etc all in Computer Base System.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Bisnis Kami -->
+                <?php $this->load->view('id/_includes/bisniskami.php'); ?>
+                <!-- End Bisnis Kami -->
             </div>
             <br />
             <div class="container">
@@ -329,7 +274,7 @@
                 <div class="owl-carousel owl-theme stage-margin"
                     data-plugin-options="{'items': 6, 'margin': 10, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
                     <?php $this->load->view('id/_includes/patner.php') ?>
-                    
+
 
 
 

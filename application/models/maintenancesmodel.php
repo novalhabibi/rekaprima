@@ -28,5 +28,10 @@ class maintenancesmodel extends CI_Model {
         $this->db->where($where);
         return $this->db->get($this->_table)->row();
     }
+    function get_maintenance_list($limit, $start){
+        $this->db->order_by("id_maintenances", "desc");
+		$query = $this->db->get('maintenances', $limit, $start);
+        return $query;
+	}
 
 }
