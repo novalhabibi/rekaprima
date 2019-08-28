@@ -95,7 +95,7 @@
                                         <div>
                                             <div class="img-thumbnail">
                                                 <img class="img-responsive"
-                                                    src="<?php echo base_url('assets/media/image/event/newevent1.jpg') ?>"
+                                                    src="<?php echo base_url() ?><?php echo $news->gambar ?> "
                                                     alt="">
                                             </div>
                                         </div>
