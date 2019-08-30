@@ -102,7 +102,7 @@
                                     ?>
                                                     <tr class="gradeX">
                                                         <td><?= $kategorimaintenance->nama_kategori_maintenance ?></td>
-                                                        <td><?= $kategorimaintenance->deskripsi_kategori_maintenance ?></td>
+                                                        <td><?= html_escape($kategorimaintenance->deskripsi_kategori_maintenance) ?></td>
                                                        
                                                       
                                                         <td>
