@@ -97,7 +97,7 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
         <div class="main" role="main">
 
             <section class="page-header page-header-custom-background"
-                style="background-image:url(<?php echo base_url('assets/media/image/signalling2.jpg') ?>);height:250px;">
+                style="background-image:url(<?= base_url().$result->gambar_kategori_maintenance ?>);height:250px;">
 
             </section>
 

@@ -129,7 +129,7 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                             <div class="col-lg-12 col-md-12" style="height: 200px;">
                                 <h3><?= $result->name_kategori_maintenance_en ?></h3>
                                 <p style="text-align: justify;"><?= $result->description_kategori_maintenance_en ?></p>
-                                
+
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="row">
@@ -143,8 +143,10 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                                                 src="<?php echo $maintenancekategori->image_maintenance_en ?>"
                                                 class="img-responsive" caption="false" width="369" height="184"></div>
                                         <h3><?php echo $maintenancekategori->name_maintenance_en ?></h3>
-                                        <p style="text-align: justify;"><?php echo $maintenancekategori->description_maintenance_en ?></p>
-                                        <a href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?> " class="btn btn-primary btn-block"
+                                        <p style="text-align: justify;">
+                                            <?php echo $maintenancekategori->description_maintenance_en ?></p>
+                                        <a href="<?php echo base_url('en/maintenance/') ?><?= $maintenancekategori->link_maintenance_en ?> "
+                                            class="btn btn-primary btn-block"
                                             style="border-color: #0068a5 #0068a5 #035381">Details</a>
                                     </div>
                                     <?php
@@ -152,7 +154,7 @@ $maintenancewherecategory = $CI->maintenancesmodel->getByIdKategori($result->id_
                                     }
                                     
                                     ?>
-                                    
+
                                 </div>
                             </div>
                         </div>

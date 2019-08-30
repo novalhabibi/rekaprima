@@ -18,11 +18,11 @@
     <li class="gui-folder">
         <a>
             <div class="gui-icon"><i class="md md-email"></i></div>
-            <span class="title">Email</span>
+            <span class="title">Maintenances</span>
         </a>
         <!--start submenu -->
         <ul>
-            <li><a href="http://www.codecovers.eu/materialadmin/mail/inbox"><span class="title">Inbox</span></a></li>
+            <li><a href="<?php echo site_url('dashboard/kategorimaintenance') ?>"><span class="title">Kategori Maintenance</span></a></li>
 
             <li><a href="http://www.codecovers.eu/materialadmin/mail/compose"><span class="title">Compose</span></a>
             </li>

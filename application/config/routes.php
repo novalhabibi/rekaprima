@@ -53,6 +53,15 @@ $route['dashboard/news/edit/(:any)'] = 'news/edit';
 $route['dashboard/news/update'] = 'news/update';
 $route['dashboard/news/hapus'] = 'news/hapus';
 // End News
+
+
+// kategorimaintenance
+$route['dashboard/kategorimaintenance'] = 'kategorimaintenance';
+$route['dashboard/kategorimaintenance/tambah'] = 'kategorimaintenance/tambah';
+$route['dashboard/kategorimaintenance/edit/(:any)'] = 'kategorimaintenance/edit';
+$route['dashboard/kategorimaintenance/update'] = 'kategorimaintenance/update';
+$route['dashboard/kategorimaintenance/hapus'] = 'kategorimaintenance/hapus';
+// End kategorimaintenance
 // Akhir Backend
 
 
